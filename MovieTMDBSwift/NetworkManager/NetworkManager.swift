@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 final class NetworkManager {
     static let shared: NetworkManager = {
@@ -15,6 +16,10 @@ final class NetworkManager {
     private init() {}
     
     func getUpcomingMovies() {
+        
+    }
+    
+    func getTrendsMovies() {
         
     }
 }
