@@ -23,6 +23,25 @@
 		BC8E392828E773F400518679 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BC8E392728E773F400518679 /* RxCocoa */; };
 		BC8E392A28E773F400518679 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = BC8E392928E773F400518679 /* RxRelay */; };
 		BC8E392C28E773F400518679 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC8E392B28E773F400518679 /* RxSwift */; };
+		BC8E392F28E774EC00518679 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E392E28E774EC00518679 /* Reachability.swift */; };
+		BC8E393128E7750900518679 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E393028E7750900518679 /* Alerts.swift */; };
+		BC8E393328E7762000518679 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E393228E7762000518679 /* Loading.swift */; };
+		BC8E393528E786A200518679 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E393428E786A200518679 /* Constants.swift */; };
+		BCC2A1B028E7CE4E00DCDEBE /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1A928E7CE4E00DCDEBE /* Poppins-SemiBold.otf */; };
+		BCC2A1B128E7CE4E00DCDEBE /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AA28E7CE4E00DCDEBE /* Poppins-Medium.otf */; };
+		BCC2A1B228E7CE4E00DCDEBE /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AB28E7CE4E00DCDEBE /* Poppins-Bold.otf */; };
+		BCC2A1B328E7CE4E00DCDEBE /* Poppins-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AC28E7CE4E00DCDEBE /* Poppins-ExtraLight.otf */; };
+		BCC2A1B428E7CE4E00DCDEBE /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AD28E7CE4E00DCDEBE /* Poppins-Regular.otf */; };
+		BCC2A1B528E7CE4E00DCDEBE /* Poppins-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AE28E7CE4E00DCDEBE /* Poppins-Thin.otf */; };
+		BCC2A1B628E7CE4E00DCDEBE /* Poppins-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AF28E7CE4E00DCDEBE /* Poppins-Light.otf */; };
+		BCC2A1B928E7D0B000DCDEBE /* UINavigationItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1B828E7D0B000DCDEBE /* UINavigationItem+Extension.swift */; };
+		BCC2A1BB28E7D1C200DCDEBE /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1BA28E7D1C200DCDEBE /* UINavigationBar+Extension.swift */; };
+		BCC2A1C428E7D82E00DCDEBE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1C228E7D82E00DCDEBE /* DetailViewController.swift */; };
+		BCC2A1C528E7D82E00DCDEBE /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1C328E7D82E00DCDEBE /* DetailViewController.xib */; };
+		BCC2A1C728E7D83E00DCDEBE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1C628E7D83E00DCDEBE /* DetailViewModel.swift */; };
+		BCC2A1C928E7EAA400DCDEBE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1C828E7EAA400DCDEBE /* UIView+Extension.swift */; };
+		BCC2A1CC28E7EF5800DCDEBE /* SeeTrailerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1CB28E7EF5800DCDEBE /* SeeTrailerButton.swift */; };
+		BCC2A1CE28E7EFBE00DCDEBE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1CD28E7EFBE00DCDEBE /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +79,25 @@
 		BC8E391F28E76D4000518679 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BC8E392128E76D5800518679 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		BC8E392428E76DCB00518679 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BC8E392E28E774EC00518679 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		BC8E393028E7750900518679 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		BC8E393228E7762000518679 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		BC8E393428E786A200518679 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BCC2A1A928E7CE4E00DCDEBE /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		BCC2A1AA28E7CE4E00DCDEBE /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
+		BCC2A1AB28E7CE4E00DCDEBE /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
+		BCC2A1AC28E7CE4E00DCDEBE /* Poppins-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.otf"; sourceTree = "<group>"; };
+		BCC2A1AD28E7CE4E00DCDEBE /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
+		BCC2A1AE28E7CE4E00DCDEBE /* Poppins-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.otf"; sourceTree = "<group>"; };
+		BCC2A1AF28E7CE4E00DCDEBE /* Poppins-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.otf"; sourceTree = "<group>"; };
+		BCC2A1B828E7D0B000DCDEBE /* UINavigationItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationItem+Extension.swift"; sourceTree = "<group>"; };
+		BCC2A1BA28E7D1C200DCDEBE /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		BCC2A1C228E7D82E00DCDEBE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BCC2A1C328E7D82E00DCDEBE /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		BCC2A1C628E7D83E00DCDEBE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		BCC2A1C828E7EAA400DCDEBE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		BCC2A1CB28E7EF5800DCDEBE /* SeeTrailerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeTrailerButton.swift; sourceTree = "<group>"; };
+		BCC2A1CD28E7EFBE00DCDEBE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				BC8E38E128E7697100518679 /* AppDelegate.swift */,
+				BCC2A1A828E7CE3D00DCDEBE /* Resources */,
+				BC8E392D28E774DA00518679 /* Utils */,
 				BC8E392328E76DBD00518679 /* Main */,
 				BC8E391E28E76D2C00518679 /* Coordinator */,
 				BC8E391B28E76C2D00518679 /* NetworkManager */,
@@ -155,6 +195,8 @@
 		BC8E391228E769CB00518679 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BCC2A1C128E7D82200DCDEBE /* View */,
+				BCC2A1C028E7D81200DCDEBE /* ViewModel */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -199,6 +241,78 @@
 				BC8E392428E76DCB00518679 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		BC8E392D28E774DA00518679 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2A1B728E7D09600DCDEBE /* Extensions */,
+				BC8E392E28E774EC00518679 /* Reachability.swift */,
+				BC8E393028E7750900518679 /* Alerts.swift */,
+				BC8E393228E7762000518679 /* Loading.swift */,
+				BC8E393428E786A200518679 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BCC2A1A728E7CE3400DCDEBE /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2A1AB28E7CE4E00DCDEBE /* Poppins-Bold.otf */,
+				BCC2A1AC28E7CE4E00DCDEBE /* Poppins-ExtraLight.otf */,
+				BCC2A1AF28E7CE4E00DCDEBE /* Poppins-Light.otf */,
+				BCC2A1AA28E7CE4E00DCDEBE /* Poppins-Medium.otf */,
+				BCC2A1AD28E7CE4E00DCDEBE /* Poppins-Regular.otf */,
+				BCC2A1A928E7CE4E00DCDEBE /* Poppins-SemiBold.otf */,
+				BCC2A1AE28E7CE4E00DCDEBE /* Poppins-Thin.otf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		BCC2A1A828E7CE3D00DCDEBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2A1CA28E7EF2F00DCDEBE /* CustomButtom */,
+				BCC2A1A728E7CE3400DCDEBE /* Font */,
+			);
+			name = Resources;
+			path = Font;
+			sourceTree = "<group>";
+		};
+		BCC2A1B728E7D09600DCDEBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2A1B828E7D0B000DCDEBE /* UINavigationItem+Extension.swift */,
+				BCC2A1C828E7EAA400DCDEBE /* UIView+Extension.swift */,
+				BCC2A1BA28E7D1C200DCDEBE /* UINavigationBar+Extension.swift */,
+				BCC2A1CD28E7EFBE00DCDEBE /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BCC2A1C028E7D81200DCDEBE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2A1C628E7D83E00DCDEBE /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BCC2A1C128E7D82200DCDEBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2A1C228E7D82E00DCDEBE /* DetailViewController.swift */,
+				BCC2A1C328E7D82E00DCDEBE /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCC2A1CA28E7EF2F00DCDEBE /* CustomButtom */ = {
+			isa = PBXGroup;
+			children = (
+				BCC2A1CB28E7EF5800DCDEBE /* SeeTrailerButton.swift */,
+			);
+			name = CustomButtom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,9 +427,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC2A1B228E7CE4E00DCDEBE /* Poppins-Bold.otf in Resources */,
+				BCC2A1B028E7CE4E00DCDEBE /* Poppins-SemiBold.otf in Resources */,
+				BCC2A1B528E7CE4E00DCDEBE /* Poppins-Thin.otf in Resources */,
+				BCC2A1B428E7CE4E00DCDEBE /* Poppins-Regular.otf in Resources */,
+				BCC2A1C528E7D82E00DCDEBE /* DetailViewController.xib in Resources */,
+				BCC2A1B328E7CE4E00DCDEBE /* Poppins-ExtraLight.otf in Resources */,
 				BC8E38EE28E7697400518679 /* LaunchScreen.storyboard in Resources */,
+				BCC2A1B628E7CE4E00DCDEBE /* Poppins-Light.otf in Resources */,
 				BC8E38EB28E7697400518679 /* Assets.xcassets in Resources */,
 				BC8E391628E76BF300518679 /* HomeViewController.xib in Resources */,
+				BCC2A1B128E7CE4E00DCDEBE /* Poppins-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,12 +463,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8E392528E76DCB00518679 /* MainViewController.swift in Sources */,
+				BC8E393528E786A200518679 /* Constants.swift in Sources */,
+				BCC2A1C928E7EAA400DCDEBE /* UIView+Extension.swift in Sources */,
+				BCC2A1CE28E7EFBE00DCDEBE /* UIColor+Extension.swift in Sources */,
+				BCC2A1BB28E7D1C200DCDEBE /* UINavigationBar+Extension.swift in Sources */,
+				BCC2A1CC28E7EF5800DCDEBE /* SeeTrailerButton.swift in Sources */,
+				BCC2A1B928E7D0B000DCDEBE /* UINavigationItem+Extension.swift in Sources */,
 				BC8E391D28E76C3A00518679 /* NetworkManager.swift in Sources */,
+				BC8E393328E7762000518679 /* Loading.swift in Sources */,
 				BC8E392228E76D5800518679 /* MainCoordinator.swift in Sources */,
 				BC8E38E228E7697100518679 /* AppDelegate.swift in Sources */,
 				BC8E392028E76D4000518679 /* Coordinator.swift in Sources */,
 				BC8E391A28E76C1600518679 /* HomeViewModel.swift in Sources */,
+				BC8E392F28E774EC00518679 /* Reachability.swift in Sources */,
+				BC8E393128E7750900518679 /* Alerts.swift in Sources */,
 				BC8E391528E76BF300518679 /* HomeViewController.swift in Sources */,
+				BCC2A1C728E7D83E00DCDEBE /* DetailViewModel.swift in Sources */,
+				BCC2A1C428E7D82E00DCDEBE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -498,7 +631,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -518,6 +651,7 @@
 				DEVELOPMENT_TEAM = 5S22W76BBZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieTMDBSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = eMovie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -545,6 +679,7 @@
 				DEVELOPMENT_TEAM = 5S22W76BBZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieTMDBSwift/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = eMovie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

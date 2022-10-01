@@ -2,14 +2,27 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.otf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-SemiBold.otf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MovieTMDBSwift" customModuleProvider="target">
             <connections>
+                <outlet property="filtersCollectionView" destination="czh-r2-uoT" id="Xcj-T7-LpP"/>
+                <outlet property="newReleasesCollectionView" destination="By8-Tj-oiz" id="CE5-J9-oet"/>
+                <outlet property="reccommendedForYouCollectionView" destination="czh-r2-uoT" id="aIf-YQ-HAC"/>
+                <outlet property="trendsCollectionView" destination="w3N-88-HTV" id="oJ1-Ps-pKN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,20 +31,174 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INIT MOVIE TMDB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-54-x3o">
-                    <rect key="frame" x="72.000000000000014" y="404" width="246.33333333333337" height="36"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFj-iv-2Jb">
+                    <rect key="frame" x="0.0" y="47" width="390" height="797"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avL-ZV-AYh">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="900"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A6U-EX-QWS">
+                                    <rect key="frame" x="12" y="8" width="366" height="217"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQk-dk-oZS">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="29"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Próximos estrenos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3N-cj-OLb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="306" height="29"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hid-Gp-gs9">
+                                                    <rect key="frame" x="306" y="0.0" width="60" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Z5r-rm-2xc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="VER MÁS"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="By8-Tj-oiz">
+                                            <rect key="frame" x="0.0" y="37" width="366" height="180"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="180" id="XN6-gX-9vq"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lpo-VW-Pri">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jvx-Jb-Isj">
+                                    <rect key="frame" x="12" y="245" width="366" height="217"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="0nj-gc-ovs">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="29"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tendencias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFH-HI-G5h">
+                                                    <rect key="frame" x="0.0" y="0.0" width="306" height="29"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0K-G5-eiF">
+                                                    <rect key="frame" x="306" y="0.0" width="60" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="fNl-Cl-ngL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="VER MÁS"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="w3N-88-HTV">
+                                            <rect key="frame" x="0.0" y="37" width="366" height="180"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="180" id="OEL-de-k43"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hUV-H8-2Yh">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3G4-Y1-2hp">
+                                    <rect key="frame" x="12" y="482" width="366" height="400"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-bc-Sug">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="29"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recomendados para ti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-JE-z3t">
+                                                    <rect key="frame" x="0.0" y="0.0" width="306" height="29"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sd1-NH-WJR">
+                                                    <rect key="frame" x="306" y="0.0" width="60" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="PV6-kr-IbQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="VER MÁS"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8DF-tb-ehv">
+                                            <rect key="frame" x="0.0" y="37" width="366" height="35"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="2xM-gf-Nbb"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PMn-2L-khM">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="czh-r2-uoT">
+                                            <rect key="frame" x="0.0" y="80" width="366" height="320"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="320" id="NbG-rr-Xtf"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FWd-IH-jOI">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="A6U-EX-QWS" firstAttribute="leading" secondItem="avL-ZV-AYh" secondAttribute="leading" constant="12" id="Bw3-TK-vkF"/>
+                                <constraint firstItem="3G4-Y1-2hp" firstAttribute="leading" secondItem="avL-ZV-AYh" secondAttribute="leading" constant="12" id="DyJ-UL-Pg9"/>
+                                <constraint firstAttribute="trailing" secondItem="A6U-EX-QWS" secondAttribute="trailing" constant="12" id="KcZ-h0-UIa"/>
+                                <constraint firstItem="jvx-Jb-Isj" firstAttribute="leading" secondItem="avL-ZV-AYh" secondAttribute="leading" constant="12" id="Lhh-bi-l8X"/>
+                                <constraint firstAttribute="height" constant="900" id="NBB-zR-j1W"/>
+                                <constraint firstItem="jvx-Jb-Isj" firstAttribute="top" secondItem="A6U-EX-QWS" secondAttribute="bottom" constant="20" id="do5-C3-rSR"/>
+                                <constraint firstAttribute="trailing" secondItem="jvx-Jb-Isj" secondAttribute="trailing" constant="12" id="nz9-qZ-xVA"/>
+                                <constraint firstItem="3G4-Y1-2hp" firstAttribute="top" secondItem="jvx-Jb-Isj" secondAttribute="bottom" constant="20" id="olf-jE-zZk"/>
+                                <constraint firstAttribute="trailing" secondItem="3G4-Y1-2hp" secondAttribute="trailing" constant="12" id="qMt-w1-6mc"/>
+                                <constraint firstItem="A6U-EX-QWS" firstAttribute="top" secondItem="avL-ZV-AYh" secondAttribute="top" constant="8" id="qkK-gG-8rU"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="avL-ZV-AYh" secondAttribute="bottom" id="0pJ-Sw-bfT"/>
+                        <constraint firstItem="avL-ZV-AYh" firstAttribute="top" secondItem="TFj-iv-2Jb" secondAttribute="top" id="1pW-rN-LSs"/>
+                        <constraint firstAttribute="trailing" secondItem="avL-ZV-AYh" secondAttribute="trailing" id="6yz-ul-phB"/>
+                        <constraint firstItem="avL-ZV-AYh" firstAttribute="width" secondItem="TFj-iv-2Jb" secondAttribute="width" id="fll-GI-eMt"/>
+                        <constraint firstItem="avL-ZV-AYh" firstAttribute="leading" secondItem="TFj-iv-2Jb" secondAttribute="leading" id="yat-Pa-msZ"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="HKv-54-x3o" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KL2-1c-7gA"/>
-                <constraint firstItem="HKv-54-x3o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KxN-4P-Rm0"/>
+                <constraint firstAttribute="bottom" secondItem="TFj-iv-2Jb" secondAttribute="bottom" id="Pgn-hQ-Dc2"/>
+                <constraint firstItem="TFj-iv-2Jb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="a1w-FL-JCY"/>
+                <constraint firstItem="TFj-iv-2Jb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gP9-1w-ZQd"/>
+                <constraint firstItem="TFj-iv-2Jb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vhj-sX-ofm"/>
             </constraints>
-            <point key="canvasLocation" x="122" y="-11"/>
+            <point key="canvasLocation" x="121.53846153846153" y="-11.374407582938389"/>
         </view>
     </objects>
     <resources>

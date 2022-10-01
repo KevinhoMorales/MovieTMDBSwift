@@ -15,7 +15,7 @@ final class NetworkManager {
     
     private init() {}
     
-    func getUpcomingMovies() {
+    func getUpcomingReleasesMovies() {
         
     }
     

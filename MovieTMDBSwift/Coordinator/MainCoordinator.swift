@@ -19,4 +19,10 @@ class MainCoordinator: Coordinator {
         homeView.coordinator = self
         navigationController.pushViewController(homeView, animated: true)
     }
+    
+    func detailView() {
+        let detailView = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        detailView.coordinator = self
+        navigationController.pushViewController(detailView, animated: true)
+    }
 }

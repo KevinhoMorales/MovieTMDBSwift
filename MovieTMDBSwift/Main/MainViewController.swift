@@ -8,13 +8,36 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     public var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initConfig()
     }
-
+    
+    private func initConfig() {
+        checkNetworkIsAvailable()
+        configureNavigationController()
+    }
+    
+    private func configureNavigationController() {
+        navigationController?.navigationBar.update(backroundColor: .black, titleColor: .white)
+    }
+    
+    private func checkNetworkIsAvailable() {
+        if !Reachability.shared.isConnectedToNetwork() {
+            Alerts.warning(title: "Sin internet, por favor revisa tu conexión", buttonTitle: "OK", viewcontroller: self)
+        }
+    }
+    
+    func addBackButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back-icon"), style: .done, target: self, action: #selector(backAction))
+    }
+    
+    @objc
+    private func backAction() {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
