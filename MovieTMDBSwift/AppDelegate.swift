@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setUpInitView() {
-        coordinator.detailView()
+        coordinator.homeView()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = coordinator.navigationController
         window?.makeKeyAndVisible()

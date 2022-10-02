@@ -11,17 +11,21 @@ import UIKit
 import CoreLocation
 
 class MainCoordinator: Coordinator {
-    
     var navigationController: UINavigationController = UINavigationController()
     
     func homeView() {
-        let homeView = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let homeView = HomeViewController(nibName: "HomeViewController", bundle: Bundle.main)
+        let homeViewModel = HomeViewModel(view: homeView)
+        homeView.viewModel = homeViewModel
         homeView.coordinator = self
         navigationController.pushViewController(homeView, animated: true)
     }
     
-    func detailView() {
-        let detailView = DetailViewController(nibName: "DetailViewController", bundle: nil)
+    func detailView(movie: Movie) {
+        let detailView = DetailViewController(nibName: "DetailViewController", bundle: Bundle.main)
+        let detailViewModel = DetailViewModel(view: detailView)
+        detailView.viewModel = detailViewModel
+        detailView.viewModel?.movie = movie
         detailView.coordinator = self
         navigationController.pushViewController(detailView, animated: true)
     }

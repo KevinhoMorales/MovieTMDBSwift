@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: MainViewController {
     
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var rateView: UIView! {
         didSet {
@@ -26,12 +26,20 @@ class DetailViewController: MainViewController {
             yearView.setCard()
         }
     }
+    @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var voteAverageLabel: UILabel!
+    
+    // MARK: - VIEWMODEL
+    var viewModel: DetailViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.setTitle(title: "Her", subtitle: "")
-        gradientView.setGradientBackground(colorTops: .white, colorBottoms: .black)
-        addBackButton()
+        viewModel?.viewDidLoad()
     }
+    
+}
+
+extension DetailViewController: DetailViewProtocol {
     
 }

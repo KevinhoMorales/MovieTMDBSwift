@@ -24,8 +24,11 @@
             <connections>
                 <outlet property="gradientView" destination="zDt-gG-TtX" id="JmH-Ee-UTr"/>
                 <outlet property="languageView" destination="Ib4-xJ-r13" id="DTv-rv-H3f"/>
+                <outlet property="movieImageView" destination="zDt-gG-TtX" id="IiV-XX-YFH"/>
+                <outlet property="movieNameLabel" destination="Ax6-EW-fX0" id="mYc-vp-8zB"/>
                 <outlet property="rateView" destination="8OM-ft-aZN" id="9To-2O-9g5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voteAverageLabel" destination="jG2-Br-Ijv" id="YWY-sJ-EVj"/>
                 <outlet property="yearView" destination="Luf-jG-2aq" id="qHa-44-uqG"/>
             </connections>
         </placeholder>
@@ -46,7 +49,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zuh-TQ-O8c">
                                     <rect key="frame" x="16" y="635.66666666666663" width="358" height="224.33333333333337"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Her" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-EW-fX0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Her" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-EW-fX0">
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="56"/>
                                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="40"/>
                                             <color key="textColor" name="WhiteColor"/>
