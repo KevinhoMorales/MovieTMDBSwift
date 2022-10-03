@@ -10,7 +10,7 @@ import UIKit
 
 struct FilterMovies {
     let title: String
-    let titleColor: UIColor
-    let backgroundColor: UIColor
-    let filterByLanguage: Bool = true
+    var titleColor: UIColor
+    var backgroundColor: UIColor
+    let filterByLanguage: Bool
 }

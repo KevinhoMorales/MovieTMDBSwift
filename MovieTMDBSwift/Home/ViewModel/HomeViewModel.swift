@@ -28,8 +28,8 @@ final class HomeViewModel: HomeViewModelProtocol {
         newReleasesMovies = BehaviorRelay(value: [])
         trendsMovies = BehaviorRelay(value: [])
         recommendedForYourMovies = BehaviorRelay(value: [])
-        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor()),
-                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor())])
+        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor(), filterByLanguage: true),
+                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterByLanguage: false)])
         getMovies()
     }
     
@@ -61,13 +61,8 @@ final class HomeViewModel: HomeViewModelProtocol {
             .observe(on: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] movies in
-                    let spanishMovies = movies.filter { $0.originalLanguage == "es"}
-                    let moviesForYou = spanishMovies
-                    let moviesTrends = Array(movies.prefix(upTo: 6))
-                    self?.trendsMovies?.accept(moviesTrends)
-                    self?.recommendedForYourMovies?.accept(moviesForYou)
-                    self?.view.trendsCollectionView.reloadData()
-                    self?.view.recommendedForYouCollectionView.reloadData()
+                    self?.setRecommendedForYouMovies(movies: movies, filter: filter)
+                    self?.setTrendsMovies(movies: movies)
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
                     Loading.hide()
@@ -78,5 +73,38 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     func getDetailMovie(movie: Movie) -> Observable<Movie> {
         DetailMovieRequest().getMovie(movie: movie)
+    }
+    
+    private func setRecommendedForYouMovies(movies: [Movie], filter: FilterMovies) {
+        if filter.filterByLanguage {
+            let moviesBySpanish = movies.filter { $0.originalLanguage == "es" }
+            recommendedForYourMovies?.accept(moviesBySpanish)
+        } else {
+            let moviesBy1993 = movies.filter { $0.releaseDate.contains("1993") }
+            recommendedForYourMovies?.accept(moviesBy1993)
+        }
+        view.recommendedForYouCollectionView.reloadData()
+    }
+    
+    private func setUpConstraintByMovies(movies: [Movies]) {
+        let moviesCount = movies.count
+        let difference = 6 - moviesCount
+        switch difference {
+        case 2:
+            view.recommendedForYouHeightConstraint.constant = 600
+            view.viewHeightConstraint.constant = 775
+        case 4:
+            view.recommendedForYouHeightConstraint.constant = 600
+            view.viewHeightConstraint.constant = 775
+        default:
+            view.recommendedForYouHeightConstraint.constant = 600
+            view.viewHeightConstraint.constant = 775
+        }
+    }
+    
+    private func setTrendsMovies(movies: [Movie]) {
+        let moviesTrends = Array(movies.prefix(upTo: 6))
+        trendsMovies?.accept(moviesTrends)
+        view.trendsCollectionView.reloadData()
     }
 }

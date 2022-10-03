@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     
     private func configureNavigationController() {
         navigationController?.navigationBar.update(backroundColor: .black, titleColor: .white)
+        navigationController?.navigationBar.tintColor = .whiteColor()
     }
     
     private func checkNetworkIsAvailable() {
