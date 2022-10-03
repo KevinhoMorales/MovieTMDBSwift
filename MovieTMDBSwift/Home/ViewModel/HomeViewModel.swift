@@ -27,16 +27,14 @@ final class HomeViewModel: HomeViewModelProtocol {
     private func setUpData() {
         newReleasesMovies = BehaviorRelay(value: [])
         trendsMovies = BehaviorRelay(value: [])
-        reccommendedForYou = BehaviorRelay(value: [])
-        filterMovies = BehaviorRelay(value: [FilterMovies(title: "En español", titleColor: .blackColor(), backgroundColor: .whiteColor()),
-                                             FilterMovies(title: "Lanzadas en 1993", titleColor: .whiteColor(), backgroundColor: .blackColor())])
+        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor()),
+                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor())])
         getMovies()
     }
     
     private func getMovies() {
         getNewReleasesMovies()
         getTrendsMovies()
-        getReccommendedForYouMovies()
     }
     
     private func getNewReleasesMovies() {
@@ -45,7 +43,7 @@ final class HomeViewModel: HomeViewModelProtocol {
             .observe(on: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] movies in
-                    self?.newReleasesMovies?.accept(Array(movies.prefix(upTo: 5)))
+                    self?.newReleasesMovies?.accept(Array(movies.prefix(upTo: 6)))
                     self?.view.newReleasesCollectionView.reloadData()
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
@@ -61,24 +59,8 @@ final class HomeViewModel: HomeViewModelProtocol {
             .observe(on: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] movies in
-                    self?.trendsMovies?.accept(Array(movies.prefix(upTo: 5)))
+                    self?.trendsMovies?.accept(Array(movies.prefix(upTo: 6)))
                     self?.view.trendsCollectionView.reloadData()
-                }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
-                    Loading.hide()
-                }, onCompleted: {
-                    Loading.hide()
-                }).disposed(by: view.disposeBag)
-    }
-    
-    private func getReccommendedForYouMovies() {
-        DataManager.getReccommendedForYouMovies()
-            .subscribe(on: MainScheduler.instance)
-            .observe(on: MainScheduler.instance)
-            .subscribe(
-                onNext: { [weak self] movies in
-                    self?.reccommendedForYou?.accept(Array(movies.prefix(upTo: 6)))
-                    self?.view.recommendedForYouCollectionView.reloadData()
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
                     Loading.hide()

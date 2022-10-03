@@ -10,6 +10,7 @@ import Foundation
 struct Constants {
     static let loadingMovies = "LOADING MOVIES"
     static let loadingMovieDetail = "LOADING DETAIL"
+    static let filterOptions = ["En español", "Lanzadas en 1993"]
 }
 
 struct API {

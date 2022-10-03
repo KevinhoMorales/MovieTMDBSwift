@@ -28,6 +28,10 @@ final class HomeViewController: MainViewController {
     
     private func setUpView() {
         navigationItem.setTitle(title: "eMovie", subtitle: "")
+        setUpCollectionsView()
+    }
+    
+    private func setUpCollectionsView() {
         setUpNewReleasesCollectionView()
         setUpTrendsCollectionView()
         setUpReccommendedForYouCollectionView()
@@ -70,7 +74,7 @@ extension HomeViewController: HomeViewProtocol {
     
     private func setUpReccommendedForYouCollectionView() {
         setUpReccommendedForYouCell()
-        viewModel?.reccommendedForYou?.bind(to: recommendedForYouCollectionView.rx.items(cellIdentifier: MovieCollectionViewCell.MOVIE_CELL_ID)) { row, model, cell in
+        viewModel?.trendsMovies?.bind(to: recommendedForYouCollectionView.rx.items(cellIdentifier: MovieCollectionViewCell.MOVIE_CELL_ID)) { row, model, cell in
             let movieCell = cell as! MovieCollectionViewCell
             movieCell.setUpCell(movie: model)
         }.disposed(by: disposeBag)
