@@ -10,16 +10,6 @@ import Foundation
 struct Constants {
     static let loadingMovies = "LOADING MOVIES"
     static let loadingMovieDetail = "LOADING DETAIL"
-    
-    struct URL {
-        static let main = "https://api.themoviedb.org/"
-        static let urlImagesMovies = "https://image.tmdb.org/t/p/w200"
-    }
-    
-    struct Endpoints {
-        static let urlListPopularMovies = "3/movie/upcoming"
-        static let urlDetailMovies = "3/movie/"
-    }
 }
 
 struct API {
@@ -30,7 +20,7 @@ struct API {
 
 struct Endpoints {
     static let newReleasesURL = "3/movie/upcoming"
-    static let trendsURL = "3/movie/popular"
+    static let trendsURL = "3/movie/top_rated"
     static let movieDetailURL = "3/movie/"
 }
 

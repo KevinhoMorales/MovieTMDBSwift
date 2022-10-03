@@ -21,7 +21,7 @@ final class DetailViewModel: DetailViewModelProtocol {
     }
     
     private func setUpData() {
-        let urlString = Constants.URL.urlImagesMovies + movie!.image
+        let urlString = API.imageURL + movie!.image
         view.movieImageView.downloadImageWithAnimation(urlString: urlString)
         view.movieNameLabel.text = movie?.title
         view.voteAverageLabel.text = "\(movie!.voteAverage)"

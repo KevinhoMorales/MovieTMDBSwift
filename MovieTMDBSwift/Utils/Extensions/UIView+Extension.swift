@@ -19,7 +19,12 @@ extension UIView {
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
-    func setCard() {
-        self.layer.cornerRadius = 5
+    func setCard(cornerRadiues: Double = 5) {
+        self.layer.cornerRadius = cornerRadiues
+    }
+    func setFilterCard() {
+        self.layer.cornerRadius = 18
+        self.layer.borderWidth = 0.8
+        self.layer.borderColor = UIColor.whiteColor().cgColor
     }
 }

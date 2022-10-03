@@ -12,4 +12,10 @@ struct DataManager {
     static func getNewReleasesMovies() -> Observable<[Movie]> {
         NewRelesesRequest().getMovies()
     }
+    static func getTrendsMovies() -> Observable<[Movie]> {
+        TrendsRequest().getMovies()
+    }
+    static func getReccommendedForYouMovies() -> Observable<[Movie]> {
+        ReccommendedForYouRequest().getMovies()
+    }
 }

@@ -7,14 +7,14 @@
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell {
+final class MovieCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var movieImageView: UIImageView!
 
     static let MOVIE_CELL_ID = "MOVIE_CELL_ID"
     
-    func setUpNewReleasesCell(movie: Movie) {
-        let urlString = Constants.URL.urlImagesMovies + movie.image
+    func setUpCell(movie: Movie) {
+        let urlString = API.imageURL + movie.image
         movieImageView.downloadImageWithAnimation(urlString: urlString)
     }
 }

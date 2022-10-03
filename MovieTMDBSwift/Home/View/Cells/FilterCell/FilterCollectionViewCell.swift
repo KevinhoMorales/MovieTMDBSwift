@@ -7,11 +7,20 @@
 
 import UIKit
 
-class FilterCollectionViewCell: UICollectionViewCell {
+final class FilterCollectionViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var backgroundStackView: UIStackView! {
+        didSet {
+            backgroundStackView.setFilterCard()
+        }
     }
+    @IBOutlet weak var filterLabel: UILabel!
+    
+    static let FILTER_CELL_ID = "FILTER_CELL_ID"
 
+    func setUpCell(filter: FilterMovies) {
+        filterLabel.text = filter.title
+        filterLabel.textColor = filter.titleColor
+        backgroundStackView.backgroundColor = filter.backgroundColor
+    }
 }
