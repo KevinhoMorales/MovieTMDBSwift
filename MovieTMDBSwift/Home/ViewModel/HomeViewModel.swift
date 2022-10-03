@@ -28,8 +28,8 @@ final class HomeViewModel: HomeViewModelProtocol {
         newReleasesMovies = BehaviorRelay(value: [])
         trendsMovies = BehaviorRelay(value: [])
         recommendedForYourMovies = BehaviorRelay(value: [])
-        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor(), filterByLanguage: true),
-                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterByLanguage: false)])
+        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor(), filterBy: .bySpanish),
+                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterBy: .byRelease1993)])
         getMovies()
     }
     
@@ -76,10 +76,11 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
     
     private func setRecommendedForYouMovies(movies: [Movie], filter: FilterMovies) {
-        if filter.filterByLanguage {
+        switch filter.filterBy {
+        case .bySpanish:
             let moviesBySpanish = movies.filter { $0.originalLanguage == "es" }
             recommendedForYourMovies?.accept(moviesBySpanish)
-        } else {
+        case .byRelease1993:
             let moviesBy1993 = movies.filter { $0.releaseDate.contains("1993") }
             recommendedForYourMovies?.accept(moviesBy1993)
         }

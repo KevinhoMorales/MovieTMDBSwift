@@ -12,5 +12,5 @@ struct FilterMovies {
     let title: String
     var titleColor: UIColor
     var backgroundColor: UIColor
-    let filterByLanguage: Bool
+    let filterBy: Filters
 }

@@ -7,8 +7,13 @@
 
 import UIKit
 
-final class FilterCollectionViewCell: UICollectionViewCell {
+enum Filters {
+    case bySpanish
+    case byRelease1993
+}
 
+final class FilterCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var backgroundStackView: UIStackView! {
         didSet {
             backgroundStackView.setFilterCard()
@@ -17,7 +22,7 @@ final class FilterCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var filterLabel: UILabel!
     
     static let FILTER_CELL_ID = "FILTER_CELL_ID"
-
+    
     func setUpCell(filter: FilterMovies) {
         filterLabel.text = filter.title
         filterLabel.textColor = filter.titleColor
