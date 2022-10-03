@@ -13,8 +13,10 @@ protocol HomeViewModelProtocol {
     var view: HomeViewController { get set }
     var newReleasesMovies: BehaviorRelay<[Movie]>? { get set }
     var trendsMovies: BehaviorRelay<[Movie]>? { get set }
+    var recommendedForYourMovies: BehaviorRelay<[Movie]>? { get set }
     var filterMovies: BehaviorRelay<[FilterMovies]>? { get set }
     func viewDidLoad()
+    func getTrendsMovies(filter: FilterMovies)
     func getDetailMovie(movie: Movie) -> Observable<Movie>
 }
 

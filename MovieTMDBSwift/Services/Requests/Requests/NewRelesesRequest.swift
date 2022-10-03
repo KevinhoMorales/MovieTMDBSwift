@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 struct NewRelesesRequest: MoviesRequest {
-    func getMovies<T>() -> RxSwift.Observable<[T]> {
+    func getMovies<T>(filter: FilterMovies) -> RxSwift.Observable<[T]> {
         Loading.show(Constants.loadingMovies)
         return Observable.create { observer in
             let session = URLSession.shared

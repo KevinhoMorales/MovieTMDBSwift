@@ -29,6 +29,7 @@ class DetailViewController: MainViewController {
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var voteAverageLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
     
     // MARK: - VIEWMODEL
     var viewModel: DetailViewModelProtocol?

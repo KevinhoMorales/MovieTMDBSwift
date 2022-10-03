@@ -25,6 +25,7 @@ final class DetailViewModel: DetailViewModelProtocol {
         view.movieImageView.downloadImageWithAnimation(urlString: urlString)
         view.movieNameLabel.text = movie?.title
         view.voteAverageLabel.text = "\(movie!.voteAverage)"
+        view.languageLabel.text = movie!.originalLanguage
     }
     
     private func setUpView() {

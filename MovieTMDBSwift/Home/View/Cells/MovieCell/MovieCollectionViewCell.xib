@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="138" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p9K-6e-WTw">
+                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p9K-6e-WTw">
                         <rect key="frame" x="0.0" y="0.0" width="138" height="180"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptE-dt-Tpj">
@@ -35,6 +35,7 @@
                 <constraint firstAttribute="trailing" secondItem="p9K-6e-WTw" secondAttribute="trailing" id="xFG-xk-ivs"/>
             </constraints>
             <connections>
+                <outlet property="backgroundStackView" destination="p9K-6e-WTw" id="7vR-Bn-oEE"/>
                 <outlet property="movieImageView" destination="ptE-dt-Tpj" id="Ebb-vv-dm3"/>
             </connections>
             <point key="canvasLocation" x="24.615384615384613" y="-11.374407582938389"/>

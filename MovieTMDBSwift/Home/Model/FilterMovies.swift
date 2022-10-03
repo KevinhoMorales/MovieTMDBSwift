@@ -12,4 +12,5 @@ struct FilterMovies {
     let title: String
     let titleColor: UIColor
     let backgroundColor: UIColor
+    let filterByLanguage: Bool = true
 }

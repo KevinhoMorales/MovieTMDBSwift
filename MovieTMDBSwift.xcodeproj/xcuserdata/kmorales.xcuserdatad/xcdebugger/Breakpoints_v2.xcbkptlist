@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "399EFC4A-15F0-48AA-AAB7-3D2D7CFD54D8"
+            uuid = "B7822736-C0B7-4A74-A4A6-41A1DAF381EB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MovieTMDBSwift/Services/Requests/Requests/TrendsRequest.swift"
+            filePath = "MovieTMDBSwift/Services/Requests/Requests/DetailMovieRequest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "getMovies()"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getMovie(movie:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CCB53FB-B3A8-4CD3-A830-93692A604E37"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieTMDBSwift/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "getTrendsMovies(filter:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

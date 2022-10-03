@@ -23,6 +23,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="MovieTMDBSwift" customModuleProvider="target">
             <connections>
                 <outlet property="gradientView" destination="zDt-gG-TtX" id="JmH-Ee-UTr"/>
+                <outlet property="languageLabel" destination="rZl-6K-GhO" id="FmT-TO-Vqm"/>
                 <outlet property="languageView" destination="Ib4-xJ-r13" id="DTv-rv-H3f"/>
                 <outlet property="movieImageView" destination="zDt-gG-TtX" id="IiV-XX-YFH"/>
                 <outlet property="movieNameLabel" destination="Ax6-EW-fX0" id="mYc-vp-8zB"/>

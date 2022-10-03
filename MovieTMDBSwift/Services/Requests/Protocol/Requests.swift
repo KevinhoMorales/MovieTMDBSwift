@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol MoviesRequest {
-    func getMovies<T>() -> Observable<[T]>
+    func getMovies<T>(filter: FilterMovies) -> Observable<[T]>
 }
 
 protocol DetailRequest {

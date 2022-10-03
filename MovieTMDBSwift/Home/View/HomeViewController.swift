@@ -16,6 +16,18 @@ final class HomeViewController: MainViewController {
     @IBOutlet weak var trendsCollectionView: UICollectionView!
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     @IBOutlet weak var recommendedForYouCollectionView: UICollectionView!
+    @IBOutlet weak var recommendedForYouHeightConstraint: NSLayoutConstraint! {
+        didSet {
+            recommendedForYouHeightConstraint.constant = 600
+        }
+    }
+    @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint! {
+        didSet {
+            viewHeightConstraint.constant = 775
+        }
+    }
+    
+    
     
     // MARK: - VIEWMODEL
     var viewModel: HomeViewModelProtocol?
@@ -74,7 +86,7 @@ extension HomeViewController: HomeViewProtocol {
     
     private func setUpReccommendedForYouCollectionView() {
         setUpReccommendedForYouCell()
-        viewModel?.trendsMovies?.bind(to: recommendedForYouCollectionView.rx.items(cellIdentifier: MovieCollectionViewCell.MOVIE_CELL_ID)) { row, model, cell in
+        viewModel?.recommendedForYourMovies?.bind(to: recommendedForYouCollectionView.rx.items(cellIdentifier: MovieCollectionViewCell.MOVIE_CELL_ID)) { row, model, cell in
             let movieCell = cell as! MovieCollectionViewCell
             movieCell.setUpCell(movie: model)
         }.disposed(by: disposeBag)

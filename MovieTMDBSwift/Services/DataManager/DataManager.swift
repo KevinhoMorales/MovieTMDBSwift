@@ -9,10 +9,10 @@ import Foundation
 import RxSwift
 
 struct DataManager {
-    static func getNewReleasesMovies() -> Observable<[Movie]> {
-        NewRelesesRequest().getMovies()
+    static func getNewReleasesMovies(filter: FilterMovies) -> Observable<[Movie]> {
+        NewRelesesRequest().getMovies(filter: filter)
     }
-    static func getTrendsMovies() -> Observable<[Movie]> {
-        TrendsRequest().getMovies()
+    static func getTrendsMovies(filter: FilterMovies) -> Observable<[Movie]> {
+        TrendsRequest().getMovies(filter: filter)
     }
 }

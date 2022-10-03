@@ -22,6 +22,7 @@ struct Movie: Codable {
     let popularity: Double
     let movieID: Int
     let originalTitle: String
+    let originalLanguage: String
     let voteAverage: Double
     let sinopsis: String
     let releaseDate: String
@@ -31,6 +32,7 @@ struct Movie: Codable {
         case title, popularity
         case movieID = "id"
         case originalTitle = "original_title"
+        case originalLanguage = "original_language"
         case voteAverage = "vote_average"
         case sinopsis = "overview"
         case releaseDate = "release_date"
