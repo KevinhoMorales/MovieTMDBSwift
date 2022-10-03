@@ -20,6 +20,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     func viewDidLoad() {
         setUpData()
         setUpView()
+        getNewReleasesMovies()
     }
     
     private func setUpData() {
@@ -28,11 +29,22 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private func setUpView() {
         view.navigationItem.setTitle(title: "eMovie", subtitle: "")
-        view.setUpNewReleasesCollectionView()
     }
     
-    func getNewReleasesMovies<T>() -> Observable<[T]> {
-        NewRelesesRequest().getMovies()
+    private func getNewReleasesMovies() {
+        DataManager.getNewReleasesMovies()
+            .subscribe(on: MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] movies in
+                    self?.newReleasesMovies?.accept(Array(movies.prefix(upTo: 5)))
+                    self?.view.newReleasesCollectionView.reloadData()
+                }, onError: { [weak self] error in
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
+                    Loading.hide()
+                }, onCompleted: {
+                    Loading.hide()
+                }).disposed(by: view.disposeBag)
     }
     
     func getDetailMovie(movie: Movie) -> Observable<Movie> {

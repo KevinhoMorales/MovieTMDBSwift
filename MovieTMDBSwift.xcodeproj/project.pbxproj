@@ -49,6 +49,7 @@
 		BCC2A1C928E7EAA400DCDEBE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1C828E7EAA400DCDEBE /* UIView+Extension.swift */; };
 		BCC2A1CC28E7EF5800DCDEBE /* SeeTrailerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1CB28E7EF5800DCDEBE /* SeeTrailerButton.swift */; };
 		BCC2A1CE28E7EFBE00DCDEBE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC2A1CD28E7EFBE00DCDEBE /* UIColor+Extension.swift */; };
+		BCC3494B28EA88DF001B4F97 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3494A28EA88DF001B4F97 /* DataManager.swift */; };
 		BCF1689528E9606B00C4C24D /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1689428E9606B00C4C24D /* Requests.swift */; };
 		BCF1689728E960D300C4C24D /* NewRelesesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1689628E960D300C4C24D /* NewRelesesRequest.swift */; };
 		BCF1689A28E96C0400C4C24D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BCF1689928E96C0400C4C24D /* Kingfisher */; };
@@ -117,6 +118,7 @@
 		BCC2A1C828E7EAA400DCDEBE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		BCC2A1CB28E7EF5800DCDEBE /* SeeTrailerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeTrailerButton.swift; sourceTree = "<group>"; };
 		BCC2A1CD28E7EFBE00DCDEBE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BCC3494A28EA88DF001B4F97 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BCF1689428E9606B00C4C24D /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		BCF1689628E960D300C4C24D /* NewRelesesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRelesesRequest.swift; sourceTree = "<group>"; };
 		BCF1689E28E97AA800C4C24D /* DetailMovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieRequest.swift; sourceTree = "<group>"; };
@@ -238,7 +240,7 @@
 				BC8E38E128E7697100518679 /* AppDelegate.swift */,
 				BC8E392D28E774DA00518679 /* Utils */,
 				BC8E391E28E76D2C00518679 /* Coordinator */,
-				BC8E391B28E76C2D00518679 /* NetworkManager */,
+				BC8E391B28E76C2D00518679 /* Services */,
 				BC8E392328E76DBD00518679 /* Main */,
 				BC8D3C2328E938E3005B8848 /* Launch */,
 				BC8E391128E769C200518679 /* Home */,
@@ -305,13 +307,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		BC8E391B28E76C2D00518679 /* NetworkManager */ = {
+		BC8E391B28E76C2D00518679 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BCF1689B28E97A2E00C4C24D /* Protocol */,
-				BCF1689C28E97A3700C4C24D /* Requests */,
+				BCC3494928EA88D3001B4F97 /* DataManager */,
+				BCC3494828EA88CD001B4F97 /* Requests */,
 			);
-			path = NetworkManager;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BC8E391E28E76D2C00518679 /* Coordinator */ = {
@@ -403,6 +405,23 @@
 				BCC2A1CB28E7EF5800DCDEBE /* SeeTrailerButton.swift */,
 			);
 			name = CustomButton;
+			sourceTree = "<group>";
+		};
+		BCC3494828EA88CD001B4F97 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BCF1689B28E97A2E00C4C24D /* Protocol */,
+				BCF1689C28E97A3700C4C24D /* Requests */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		BCC3494928EA88D3001B4F97 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				BCC3494A28EA88DF001B4F97 /* DataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		BCF1689B28E97A2E00C4C24D /* Protocol */ = {
@@ -590,6 +609,7 @@
 				BC8E392228E76D5800518679 /* MainCoordinator.swift in Sources */,
 				BC8E38E228E7697100518679 /* AppDelegate.swift in Sources */,
 				BCF1689F28E97AA800C4C24D /* DetailMovieRequest.swift in Sources */,
+				BCC3494B28EA88DF001B4F97 /* DataManager.swift in Sources */,
 				BC8D3C4728E93DA7005B8848 /* MovieCollectionViewCell.swift in Sources */,
 				BC8D3C4B28E94573005B8848 /* HomeProtocols.swift in Sources */,
 				BC8E392028E76D4000518679 /* Coordinator.swift in Sources */,

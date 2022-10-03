@@ -23,6 +23,7 @@ final class HomeViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.viewDidLoad()
+        setUpNewReleasesCollectionView()
     }
     
 }
@@ -41,23 +42,6 @@ extension HomeViewController: HomeViewProtocol {
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
                 }, onCompleted: {
-                }).disposed(by: disposeBag)
-        getNewReleasesMovies()
-    }
-    
-    private func getNewReleasesMovies() {
-        viewModel?.getNewReleasesMovies()
-            .subscribe(on: MainScheduler.instance)
-            .observe(on: MainScheduler.instance)
-            .subscribe(
-                onNext: { [weak self] movies in
-                    self?.viewModel?.newReleasesMovies?.accept(Array(movies.prefix(upTo: 5)))
-                    self?.newReleasesCollectionView.reloadData()
-                }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
-                    Loading.hide()
-                }, onCompleted: {
-                    Loading.hide()
                 }).disposed(by: disposeBag)
     }
     
