@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import RxSwift
 import RxRelay
 
 protocol SeeMoreViewModelProtocol {
     var view: SeeMoreViewController { get set }
     var movies: BehaviorRelay<[Movie]>? { get set }
     func viewDidLoad()
+    func getDetailMovie(id: String) -> Observable<Movie>
 }
 
 protocol SeeMoreViewProtocol {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 import RxRelay
 
 final class SeeMoreViewModel: SeeMoreViewModelProtocol {
@@ -18,5 +19,9 @@ final class SeeMoreViewModel: SeeMoreViewModelProtocol {
     
     func viewDidLoad() {
         
+    }
+    
+    func getDetailMovie(id: String) -> Observable<Movie> {
+        DetailMovieRequest().getMovie(id: id)
     }
 }

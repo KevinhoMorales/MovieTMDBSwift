@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class SeeMoreViewController: MainViewController {
     @IBOutlet weak var seeMoreTableView: UITableView!
@@ -34,7 +35,8 @@ final class SeeMoreViewController: MainViewController {
         seeMoreTableView.rx.modelSelected(Movie.self)
             .subscribe(
                 onNext: { [weak self] movie in
-                    self?.coordinator?.detailView(movie: movie)
+                    let id = String(movie.movieID)
+                    self?.getDetailMovie(id: id)
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
                 }, onCompleted: {
@@ -63,4 +65,21 @@ extension SeeMoreViewController: UITableViewDelegate {
         180
     }
 
+}
+
+extension SeeMoreViewController {
+    private func getDetailMovie(id: String) {
+        viewModel?.getDetailMovie(id: id)
+            .subscribe(on: MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] movies in
+                    self?.coordinator?.detailView(movie: movies)
+                }, onError: { [weak self] error in
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Loading.hide()
+                }, onCompleted: {
+                    Loading.hide()
+                }).disposed(by: disposeBag)
+    }
 }

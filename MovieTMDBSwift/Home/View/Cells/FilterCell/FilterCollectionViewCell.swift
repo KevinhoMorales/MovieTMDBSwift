@@ -8,6 +8,7 @@
 import UIKit
 
 enum Filters {
+    case byAll
     case bySpanish
     case byRelease1993
 }

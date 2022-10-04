@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxRelay
+import UIKit
 
 final class HomeViewModel: HomeViewModelProtocol {
     var view: HomeViewController
@@ -28,15 +29,20 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
     
     private func setUpData() {
+        initEmptyData()
+        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor(), filterBy: .byAll),
+                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterBy: .bySpanish),
+                                             FilterMovies(title: Constants.filterOptions[2], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterBy: .byRelease1993)])
+        getMovies()
+    }
+    
+    private func initEmptyData() {
         newReleasesMovies = BehaviorRelay(value: [])
         trendsMovies = BehaviorRelay(value: [])
         recommendedForYourMovies = BehaviorRelay(value: [])
         newReleasesAllMovies = BehaviorRelay(value: [])
         trendsAllMovies = BehaviorRelay(value: [])
         recommendedForYourAllMovies = BehaviorRelay(value: [])
-        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor(), filterBy: .bySpanish),
-                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterBy: .byRelease1993)])
-        getMovies()
     }
     
     private func getMovies() {
@@ -85,6 +91,10 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private func setRecommendedForYouMovies(movies: [Movie], filter: FilterMovies) {
         switch filter.filterBy {
+        case .byAll:
+            let allMovies = Array(movies.prefix(upTo: 6))
+            recommendedForYourMovies?.accept(allMovies)
+            recommendedForYourAllMovies?.accept(movies)
         case .bySpanish:
             let moviesBySpanish = movies.filter { $0.originalLanguage == "es" }
             recommendedForYourMovies?.accept(moviesBySpanish)
@@ -94,6 +104,7 @@ final class HomeViewModel: HomeViewModelProtocol {
             recommendedForYourMovies?.accept(moviesBy1993)
             recommendedForYourAllMovies?.accept(moviesBy1993)
         }
+        setAnimationScroll()
         view.recommendedForYouCollectionView.reloadData()
     }
     
@@ -103,18 +114,25 @@ final class HomeViewModel: HomeViewModelProtocol {
         view.trendsCollectionView.reloadData()
     }
     
-    private func setUpConstraintByMovies(movies: [Movies]) {
+    private func setAnimationScroll() {
+        UIView.animate(withDuration: 1) { [weak self] in
+            self?.setUpConstraintByMovies(movies: self!.recommendedForYourMovies!.value)
+            self?.view.view.layoutIfNeeded()
+        }
+    }
+    
+    private func setUpConstraintByMovies(movies: [Movie]) {
         let moviesCount = movies.count
         switch moviesCount {
-        case 0...moviesCount:
+        case 1,2:
             view.recommendedForYouHeightConstraint.constant = 600
             view.viewHeightConstraint.constant = 775
-        case 4:
-            view.recommendedForYouHeightConstraint.constant = 600
-            view.viewHeightConstraint.constant = 775
+        case 3,4:
+            view.recommendedForYouHeightConstraint.constant = 615
+            view.viewHeightConstraint.constant = 1000
         default:
-            view.recommendedForYouHeightConstraint.constant = 600
-            view.viewHeightConstraint.constant = 775
+            view.recommendedForYouHeightConstraint.constant = 630
+            view.viewHeightConstraint.constant = 1200
         }
     }
 }
