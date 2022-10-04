@@ -11,13 +11,13 @@ extension UINavigationItem {
     func setTitle(title: String, subtitle: String) {
         let titleLabel = UILabel()
         titleLabel.text = title
-        titleLabel.textColor = .white
+        titleLabel.textColor = .labelColor()
         titleLabel.font = UIFont(name: "Poppins-Bold", size: 22)
         titleLabel.sizeToFit()
         
         let subtitleLabel = UILabel()
         subtitleLabel.text = subtitle
-        subtitleLabel.textColor = .white
+        subtitleLabel.textColor = .labelColor()
         subtitleLabel.font = UIFont(name: "Poppins-Light", size: 10)
         subtitleLabel.textAlignment = .center
         subtitleLabel.sizeToFit()

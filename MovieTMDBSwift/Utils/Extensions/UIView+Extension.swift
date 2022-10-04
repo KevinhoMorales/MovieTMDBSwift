@@ -9,12 +9,10 @@ import UIKit
 
 extension UIView {
     func setGradientBackground(colorTops: UIColor, colorBottoms: UIColor) {
-        
-        let colorTop =  UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.1).cgColor
-        let colorBottom = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1).cgColor
-        
+        let colorTopWithAlpha = colorTops.withAlphaComponent(0.1).cgColor
+        let colorBottomWithAlpha = colorBottoms.withAlphaComponent(1).cgColor
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorBottom, colorTop, colorBottom]
+        gradientLayer.colors = [colorBottomWithAlpha, colorTopWithAlpha, colorBottomWithAlpha]
         gradientLayer.locations = [0.0, 0.5, 1.0]
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at: 0)
@@ -25,6 +23,6 @@ extension UIView {
     func setFilterCard() {
         self.layer.cornerRadius = 18
         self.layer.borderWidth = 0.8
-        self.layer.borderColor = UIColor.whiteColor().cgColor
+        self.layer.borderColor = UIColor.labelColor().cgColor
     }
 }

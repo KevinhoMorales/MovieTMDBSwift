@@ -30,9 +30,9 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private func setUpData() {
         initEmptyData()
-        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor(), filterBy: .byAll),
-                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterBy: .bySpanish),
-                                             FilterMovies(title: Constants.filterOptions[2], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterBy: .byRelease1993)])
+        filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .labelColor(), backgroundColor: .backgroundColor(), filterBy: .byAll),
+                                             FilterMovies(title: Constants.filterOptions[1], titleColor: .backgroundColor(), backgroundColor: .labelColor(), filterBy: .bySpanish),
+                                             FilterMovies(title: Constants.filterOptions[2], titleColor: .backgroundColor(), backgroundColor: .labelColor(), filterBy: .byRelease1993)])
         getMovies()
     }
     

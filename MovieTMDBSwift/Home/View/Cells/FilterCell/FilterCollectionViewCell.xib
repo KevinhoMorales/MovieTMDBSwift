@@ -29,14 +29,16 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-cI-Pnc">
                                 <rect key="frame" x="0.0" y="0.0" width="68" height="34"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
-                                <color key="textColor" name="BlackColor"/>
+                                <color key="textColor" name="LabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                     </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="JXO-Vf-ikZ" secondAttribute="trailing" constant="2" id="1ue-ss-Wu6"/>
                 <constraint firstItem="JXO-Vf-ikZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="28l-hv-NiI"/>
@@ -52,7 +54,10 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="BlackColor">
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LabelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

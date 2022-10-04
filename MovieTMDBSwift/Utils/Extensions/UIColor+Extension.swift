@@ -8,12 +8,12 @@
 import UIKit
 
 extension UIColor {
-    class func whiteColor() -> UIColor {
-        guard let color = UIColor(named: "WhiteColor") else { return UIColor.white }
+    class func backgroundColor() -> UIColor {
+        guard let color = UIColor(named: "BackgroundColor") else { return UIColor.white }
         return color
     }
-    class func blackColor() -> UIColor {
-        guard let color = UIColor(named: "BlackColor") else { return UIColor.white }
+    class func labelColor() -> UIColor {
+        guard let color = UIColor(named: "LabelColor") else { return UIColor.white }
         return color
     }
     class func grayColor() -> UIColor {

@@ -26,11 +26,11 @@ class SeeTrailerButton: UIButton {
     }
     
     func setupButton() {
-        setTitleColor(.whiteColor(), for: .normal)
+        setTitleColor(.labelColor(), for: .normal)
         layer.backgroundColor = UIColor.transparentColor().cgColor
         layer.cornerRadius = CGFloat(10)
         layer.borderWidth = 0.5
-        layer.borderColor = UIColor.grayColor().cgColor
+        layer.borderColor = UIColor.labelColor().cgColor
         titleLabel?.font =  UIFont(name: "Poppins-Medium", size: 18)
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.1

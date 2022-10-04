@@ -56,7 +56,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Her" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-EW-fX0">
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="56"/>
                                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="40"/>
-                                            <color key="textColor" name="WhiteColor"/>
+                                            <color key="textColor" name="LabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkj-zD-g7H">
@@ -152,7 +152,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heartfelt • Romance • Sci-fi • Drama" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG8-sE-VX5">
                                                     <rect key="frame" x="0.0" y="0.0" width="358" height="25.333333333333332"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
-                                                    <color key="textColor" name="WhiteColor"/>
+                                                    <color key="textColor" name="LabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -173,7 +173,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rQ-no-0jx">
                                             <rect key="frame" x="0.0" y="240.33333333333337" width="358" height="19.666666666666686"/>
                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                            <color key="textColor" name="WhiteColor"/>
+                                            <color key="textColor" name="LabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -193,6 +193,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" name="BackgroundColor"/>
                     <constraints>
                         <constraint firstItem="8NM-2K-yjV" firstAttribute="top" secondItem="FDn-pL-ehy" secondAttribute="top" id="8GR-pH-OJd"/>
                         <constraint firstAttribute="trailing" secondItem="8NM-2K-yjV" secondAttribute="trailing" id="Bwc-mh-rRn"/>
@@ -203,7 +204,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstItem="FDn-pL-ehy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5OA-X2-9BK"/>
                 <constraint firstItem="FDn-pL-ehy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="T83-zX-qyw"/>
@@ -216,14 +217,17 @@
     <resources>
         <image name="her" width="375" height="812"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="GrayColor">
             <color red="1" green="1" blue="1" alpha="0.79000002145767212" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="WhiteColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="LabelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="YellowColor">
             <color red="0.96470588235294119" green="0.7803921568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

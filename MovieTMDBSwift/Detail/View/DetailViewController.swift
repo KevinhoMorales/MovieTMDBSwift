@@ -44,7 +44,7 @@ class DetailViewController: MainViewController {
 
     private func setUpView() {
         setUpData()
-        gradientView.setGradientBackground(colorTops: .white, colorBottoms: .black)
+        gradientView.setGradientBackground(colorTops: .backgroundColor(), colorBottoms: .backgroundColor())
         addBackButton()
     }
     
