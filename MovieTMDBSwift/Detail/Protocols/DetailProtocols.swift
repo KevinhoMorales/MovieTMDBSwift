@@ -11,6 +11,7 @@ protocol DetailViewModelProtocol {
     var view: DetailViewController { get set }
     var movie: Movie? { get set }
     func viewDidLoad()
+    func openTrailer()
 }
 
 protocol DetailViewProtocol {

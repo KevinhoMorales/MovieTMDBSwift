@@ -10,6 +10,7 @@ import UIKit
 final class SeeMoreViewController: MainViewController {
     @IBOutlet weak var seeMoreTableView: UITableView!
     
+    // MARK: - IBOutlets
     var viewModel: SeeMoreViewModelProtocol?
     
     override func viewDidLoad() {

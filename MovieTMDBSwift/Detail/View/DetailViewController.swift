@@ -30,6 +30,8 @@ class DetailViewController: MainViewController {
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var voteAverageLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var releaseDateYearLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
     
     // MARK: - VIEWMODEL
     var viewModel: DetailViewModelProtocol?
@@ -50,8 +52,14 @@ class DetailViewController: MainViewController {
         let urlString = API.imageURL + viewModel!.movie!.image
         movieImageView.downloadImageWithAnimation(urlString: urlString)
         movieNameLabel.text = viewModel!.movie!.title
-        voteAverageLabel.text = "\(viewModel!.movie!.voteAverage)"
+        voteAverageLabel.text = viewModel!.movie!.voteAverage.roundValue()
         languageLabel.text = viewModel!.movie!.originalLanguage
+        let year = viewModel!.movie!.releaseDate.split(separator: "-")[0]
+        releaseDateYearLabel.text = "\(year)"
+        categoriesLabel.text = "Heartfelt • Romance • Sci-fi • Drama"
+    }
+    @IBAction func seeTrailerAction(_ sender: Any) {
+        viewModel?.openTrailer()
     }
 }
 

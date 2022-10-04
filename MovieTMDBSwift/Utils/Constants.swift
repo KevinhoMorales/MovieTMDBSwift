@@ -11,12 +11,14 @@ struct Constants {
     static let loadingMovies = "LOADING MOVIES"
     static let loadingMovieDetail = "LOADING DETAIL"
     static let filterOptions = ["En español", "Lanzadas en 1993"]
+    static let youtubeURL = "https://www.youtube.com/watch?v="
 }
 
 struct API {
     static let apiURL = "https://api.themoviedb.org/"
     static let imageURL = "https://image.tmdb.org/t/p/w200"
     static let apiKey = "?api_key=91380f96fa2addf2dfb94d48397cf8da"
+    static let appendVideoToResponse = "&append_to_response=videos"
 }
 
 struct Endpoints {

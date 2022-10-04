@@ -9,11 +9,11 @@ import Foundation
 import RxSwift
 
 struct DetailMovieRequest: DetailRequest {
-    func getMovie(movie: Movie) -> RxSwift.Observable<Movie> {
+    func getMovie(id: String) -> RxSwift.Observable<Movie> {
         Loading.show(Constants.loadingMovieDetail)
         return Observable.create { observer in
             let session = URLSession.shared
-            let urlString = API.apiURL + Endpoints.movieDetailURL + "\(movie.movieID)" + API.apiKey
+            let urlString = API.apiURL + Endpoints.movieDetailURL + id + API.apiKey + API.appendVideoToResponse
             let url = URL(string: urlString)
             var request = URLRequest(url: url!)
             request.httpMethod = "GET"

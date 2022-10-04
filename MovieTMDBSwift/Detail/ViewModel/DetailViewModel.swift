@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SafariServices
 
 final class DetailViewModel: DetailViewModelProtocol {
     var view: DetailViewController
@@ -19,4 +20,9 @@ final class DetailViewModel: DetailViewModelProtocol {
         
     }    
     
+    func openTrailer() {
+        let youTubeURL = Constants.youtubeURL + movie!.videos!.videos.first!.key
+        guard let url = URL(string: youTubeURL) else { return }
+        view.present(SFSafariViewController(url: url), animated: true)
+    }
 }

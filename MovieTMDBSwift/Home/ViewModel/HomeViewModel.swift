@@ -71,8 +71,8 @@ final class HomeViewModel: HomeViewModelProtocol {
                 }).disposed(by: view.disposeBag)
     }
     
-    func getDetailMovie(movie: Movie) -> Observable<Movie> {
-        DetailMovieRequest().getMovie(movie: movie)
+    func getDetailMovie(id: String) -> Observable<Movie> {
+        DetailMovieRequest().getMovie(id: id)
     }
     
     private func setRecommendedForYouMovies(movies: [Movie], filter: FilterMovies) {

@@ -40,6 +40,7 @@
 		BCBEB33228EB977500B9AFD6 /* SeeMoreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEB33128EB977500B9AFD6 /* SeeMoreProtocols.swift */; };
 		BCBEB33628EBB45300B9AFD6 /* SeeMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEB33428EBB45300B9AFD6 /* SeeMoreTableViewCell.swift */; };
 		BCBEB33728EBB45300B9AFD6 /* SeeMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBEB33528EBB45300B9AFD6 /* SeeMoreTableViewCell.xib */; };
+		BCBEB33928EBC81200B9AFD6 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEB33828EBC81200B9AFD6 /* Double+Extension.swift */; };
 		BCC2A1B028E7CE4E00DCDEBE /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1A928E7CE4E00DCDEBE /* Poppins-SemiBold.otf */; };
 		BCC2A1B128E7CE4E00DCDEBE /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AA28E7CE4E00DCDEBE /* Poppins-Medium.otf */; };
 		BCC2A1B228E7CE4E00DCDEBE /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AB28E7CE4E00DCDEBE /* Poppins-Bold.otf */; };
@@ -117,6 +118,7 @@
 		BCBEB33128EB977500B9AFD6 /* SeeMoreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreProtocols.swift; sourceTree = "<group>"; };
 		BCBEB33428EBB45300B9AFD6 /* SeeMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreTableViewCell.swift; sourceTree = "<group>"; };
 		BCBEB33528EBB45300B9AFD6 /* SeeMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeMoreTableViewCell.xib; sourceTree = "<group>"; };
+		BCBEB33828EBC81200B9AFD6 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		BCC2A1A928E7CE4E00DCDEBE /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
 		BCC2A1AA28E7CE4E00DCDEBE /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		BCC2A1AB28E7CE4E00DCDEBE /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				BCC2A1BA28E7D1C200DCDEBE /* UINavigationBar+Extension.swift */,
 				BCC2A1CD28E7EFBE00DCDEBE /* UIColor+Extension.swift */,
 				BCF168A028E9829000C4C24D /* UIImageView+Extension.swift */,
+				BCBEB33828EBC81200B9AFD6 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				BCC3494B28EA88DF001B4F97 /* DataManager.swift in Sources */,
 				BC8D3C4728E93DA7005B8848 /* MovieCollectionViewCell.swift in Sources */,
 				BCC3494D28EA8BAA001B4F97 /* TrendsRequest.swift in Sources */,
+				BCBEB33928EBC81200B9AFD6 /* Double+Extension.swift in Sources */,
 				BC8D3C4B28E94573005B8848 /* HomeProtocols.swift in Sources */,
 				BCBEB33628EBB45300B9AFD6 /* SeeMoreTableViewCell.swift in Sources */,
 				BC8E392028E76D4000518679 /* Coordinator.swift in Sources */,
