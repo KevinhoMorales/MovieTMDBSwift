@@ -32,7 +32,8 @@ final class DetailViewModel: DetailViewModelProtocol {
     }
     
     func getGenres() -> String {
-        let genres = movie!.genres!.compactMap { $0.name }.joined(separator: " • ")
-        return genres
+        guard let genres = movie!.genres else { return "-" }
+        let genresString = genres.compactMap { $0.name }.joined(separator: " • ")
+        return genresString
     }
 }

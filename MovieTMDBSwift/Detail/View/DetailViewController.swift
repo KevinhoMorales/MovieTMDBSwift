@@ -32,7 +32,7 @@ class DetailViewController: MainViewController {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var releaseDateYearLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
-    
+    @IBOutlet weak var sinopsisLabel: UILabel!
     // MARK: - VIEWMODEL
     var viewModel: DetailViewModelProtocol?
     
@@ -56,6 +56,7 @@ class DetailViewController: MainViewController {
         languageLabel.text = viewModel!.movie!.originalLanguage
         releaseDateYearLabel.text = viewModel!.getYearByReleaseDate()
         categoriesLabel.text = viewModel!.getGenres()
+        sinopsisLabel.text = viewModel!.movie!.sinopsis
     }
     @IBAction func seeTrailerAction(_ sender: Any) {
         viewModel?.openTrailer()
