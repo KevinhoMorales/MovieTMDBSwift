@@ -105,32 +105,32 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8OM-ft-aZN">
                                                     <rect key="frame" x="207" y="0.0" width="85" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-Br-Ijv">
-                                                            <rect key="frame" x="42" y="5" width="40" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG2-Br-Ijv">
+                                                            <rect key="frame" x="39" y="5" width="36" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="40" id="T4h-LL-f6D"/>
+                                                                <constraint firstAttribute="width" constant="36" id="T4h-LL-f6D"/>
                                                                 <constraint firstAttribute="height" constant="30" id="sUg-kl-yAx"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="21"/>
                                                             <color key="textColor" name="BlackColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nug-oE-Hyc">
-                                                            <rect key="frame" x="4" y="6.3333333333332575" width="36" height="24.666666666666661"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nug-oE-Hyc">
+                                                            <rect key="frame" x="11" y="7.3333333333332966" width="26" height="22.66666666666665"/>
                                                             <color key="tintColor" name="BlackColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="STW-ns-RwR"/>
-                                                                <constraint firstAttribute="width" constant="36" id="y4F-ti-Pk9"/>
+                                                                <constraint firstAttribute="height" constant="23" id="STW-ns-RwR"/>
+                                                                <constraint firstAttribute="width" constant="26" id="y4F-ti-Pk9"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" name="YellowColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="4a0-gY-hza"/>
-                                                        <constraint firstAttribute="trailing" secondItem="jG2-Br-Ijv" secondAttribute="trailing" constant="3" id="D5S-Fv-3U1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jG2-Br-Ijv" secondAttribute="trailing" constant="10" id="D5S-Fv-3U1"/>
                                                         <constraint firstAttribute="width" constant="85" id="FVU-Xv-EI6"/>
-                                                        <constraint firstItem="Nug-oE-Hyc" firstAttribute="leading" secondItem="8OM-ft-aZN" secondAttribute="leading" constant="4" id="H67-Ky-2Gg"/>
-                                                        <constraint firstItem="Nug-oE-Hyc" firstAttribute="centerY" secondItem="8OM-ft-aZN" secondAttribute="centerY" id="fjh-8s-PDI"/>
+                                                        <constraint firstItem="Nug-oE-Hyc" firstAttribute="leading" secondItem="8OM-ft-aZN" secondAttribute="leading" constant="11" id="H67-Ky-2Gg"/>
+                                                        <constraint firstItem="Nug-oE-Hyc" firstAttribute="centerY" secondItem="8OM-ft-aZN" secondAttribute="centerY" constant="-1.0000000000000071" id="fjh-8s-PDI"/>
                                                         <constraint firstItem="jG2-Br-Ijv" firstAttribute="centerY" secondItem="8OM-ft-aZN" secondAttribute="centerY" id="sX2-QR-JTk"/>
                                                     </constraints>
                                                 </view>

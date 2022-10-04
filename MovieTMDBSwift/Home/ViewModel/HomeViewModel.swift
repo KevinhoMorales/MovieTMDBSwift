@@ -131,7 +131,7 @@ final class HomeViewModel: HomeViewModelProtocol {
             view.recommendedForYouHeightConstraint.constant = 615
             view.viewHeightConstraint.constant = 1000
         default:
-            view.recommendedForYouHeightConstraint.constant = 630
+            view.recommendedForYouHeightConstraint.constant = 650
             view.viewHeightConstraint.constant = 1200
         }
     }
