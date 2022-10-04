@@ -15,6 +15,9 @@ final class HomeViewModel: HomeViewModelProtocol {
     var trendsMovies: BehaviorRelay<[Movie]>?
     var recommendedForYourMovies: BehaviorRelay<[Movie]>?
     var filterMovies: BehaviorRelay<[FilterMovies]>?
+    var newReleasesAllMovies: BehaviorRelay<[Movie]>?
+    var trendsAllMovies: BehaviorRelay<[Movie]>?
+    var recommendedForYourAllMovies: BehaviorRelay<[Movie]>?
     
     init(view: HomeViewController) {
         self.view = view
@@ -28,6 +31,9 @@ final class HomeViewModel: HomeViewModelProtocol {
         newReleasesMovies = BehaviorRelay(value: [])
         trendsMovies = BehaviorRelay(value: [])
         recommendedForYourMovies = BehaviorRelay(value: [])
+        newReleasesAllMovies = BehaviorRelay(value: [])
+        trendsAllMovies = BehaviorRelay(value: [])
+        recommendedForYourAllMovies = BehaviorRelay(value: [])
         filterMovies = BehaviorRelay(value: [FilterMovies(title: Constants.filterOptions[0], titleColor: .blackColor(), backgroundColor: .whiteColor(), filterBy: .bySpanish),
                                              FilterMovies(title: Constants.filterOptions[1], titleColor: .whiteColor(), backgroundColor: .blackColor(), filterBy: .byRelease1993)])
         getMovies()
@@ -46,6 +52,7 @@ final class HomeViewModel: HomeViewModelProtocol {
             .subscribe(
                 onNext: { [weak self] movies in
                     self?.newReleasesMovies?.accept(Array(movies.prefix(upTo: 6)))
+                    self?.newReleasesAllMovies?.accept(movies)
                     self?.view.newReleasesCollectionView.reloadData()
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
@@ -63,6 +70,7 @@ final class HomeViewModel: HomeViewModelProtocol {
                 onNext: { [weak self] movies in
                     self?.setRecommendedForYouMovies(movies: movies, filter: filter)
                     self?.setTrendsMovies(movies: movies)
+                    self?.trendsAllMovies?.accept(movies)
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
                     Loading.hide()
@@ -80,9 +88,11 @@ final class HomeViewModel: HomeViewModelProtocol {
         case .bySpanish:
             let moviesBySpanish = movies.filter { $0.originalLanguage == "es" }
             recommendedForYourMovies?.accept(moviesBySpanish)
+            recommendedForYourAllMovies?.accept(moviesBySpanish)
         case .byRelease1993:
             let moviesBy1993 = movies.filter { $0.releaseDate.contains("1993") }
             recommendedForYourMovies?.accept(moviesBy1993)
+            recommendedForYourAllMovies?.accept(moviesBy1993)
         }
         view.recommendedForYouCollectionView.reloadData()
     }

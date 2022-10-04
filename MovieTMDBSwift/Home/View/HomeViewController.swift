@@ -51,16 +51,16 @@ final class HomeViewController: MainViewController {
     }
     
     @IBAction func seeMoreNewReleasesAction(_ sender: Any) {
-        coordinator?.seeMoreView(movies: viewModel?.newReleasesMovies)
+        coordinator?.seeMoreView(movies: viewModel?.newReleasesAllMovies)
     }
     
     @IBAction func
     seeMoreTrendsAction(_ sender: Any) {
-        coordinator?.seeMoreView(movies: viewModel?.trendsMovies)
+        coordinator?.seeMoreView(movies: viewModel?.trendsAllMovies)
     }
     
     @IBAction func seeMoreRecommendedForYouAction(_ sender: Any) {
-        coordinator?.seeMoreView(movies: viewModel?.recommendedForYourMovies)
+        coordinator?.seeMoreView(movies: viewModel?.recommendedForYourAllMovies)
     }
 }
 
