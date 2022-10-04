@@ -20,7 +20,7 @@
                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p9K-6e-WTw">
                         <rect key="frame" x="0.0" y="0.0" width="138" height="180"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ptE-dt-Tpj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ptE-dt-Tpj">
                                 <rect key="frame" x="0.0" y="0.0" width="138" height="180"/>
                             </imageView>
                         </subviews>
@@ -41,4 +41,7 @@
             <point key="canvasLocation" x="24.615384615384613" y="-11.374407582938389"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="movie-placeholder" width="121" height="179"/>
+    </resources>
 </document>

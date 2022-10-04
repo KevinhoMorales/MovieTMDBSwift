@@ -16,20 +16,7 @@ final class DetailViewModel: DetailViewModelProtocol {
     }
     
     func viewDidLoad() {
-        setUpData()
-        setUpView()
-    }
+        
+    }    
     
-    private func setUpData() {
-        let urlString = API.imageURL + movie!.image
-        view.movieImageView.downloadImageWithAnimation(urlString: urlString)
-        view.movieNameLabel.text = movie?.title
-        view.voteAverageLabel.text = "\(movie!.voteAverage)"
-        view.languageLabel.text = movie!.originalLanguage
-    }
-    
-    private func setUpView() {
-        view.gradientView.setGradientBackground(colorTops: .white, colorBottoms: .black)
-        view.addBackButton()
-    }
 }

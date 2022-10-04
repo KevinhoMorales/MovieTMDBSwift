@@ -87,11 +87,16 @@ final class HomeViewModel: HomeViewModelProtocol {
         view.recommendedForYouCollectionView.reloadData()
     }
     
+    private func setTrendsMovies(movies: [Movie]) {
+        let moviesTrends = Array(movies.prefix(upTo: 6))
+        trendsMovies?.accept(moviesTrends)
+        view.trendsCollectionView.reloadData()
+    }
+    
     private func setUpConstraintByMovies(movies: [Movies]) {
         let moviesCount = movies.count
-        let difference = 6 - moviesCount
-        switch difference {
-        case 2:
+        switch moviesCount {
+        case 0...moviesCount:
             view.recommendedForYouHeightConstraint.constant = 600
             view.viewHeightConstraint.constant = 775
         case 4:
@@ -101,11 +106,5 @@ final class HomeViewModel: HomeViewModelProtocol {
             view.recommendedForYouHeightConstraint.constant = 600
             view.viewHeightConstraint.constant = 775
         }
-    }
-    
-    private func setTrendsMovies(movies: [Movie]) {
-        let moviesTrends = Array(movies.prefix(upTo: 6))
-        trendsMovies?.accept(moviesTrends)
-        view.trendsCollectionView.reloadData()
     }
 }

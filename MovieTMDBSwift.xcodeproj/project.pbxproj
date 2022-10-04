@@ -34,6 +34,12 @@
 		BC8E393128E7750900518679 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E393028E7750900518679 /* Alerts.swift */; };
 		BC8E393328E7762000518679 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E393228E7762000518679 /* Loading.swift */; };
 		BC8E393528E786A200518679 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E393428E786A200518679 /* Constants.swift */; };
+		BCBEB32C28EB975300B9AFD6 /* SeeMoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEB32B28EB975300B9AFD6 /* SeeMoreViewModel.swift */; };
+		BCBEB32F28EB976500B9AFD6 /* SeeMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEB32D28EB976500B9AFD6 /* SeeMoreViewController.swift */; };
+		BCBEB33028EB976500B9AFD6 /* SeeMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBEB32E28EB976500B9AFD6 /* SeeMoreViewController.xib */; };
+		BCBEB33228EB977500B9AFD6 /* SeeMoreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEB33128EB977500B9AFD6 /* SeeMoreProtocols.swift */; };
+		BCBEB33628EBB45300B9AFD6 /* SeeMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEB33428EBB45300B9AFD6 /* SeeMoreTableViewCell.swift */; };
+		BCBEB33728EBB45300B9AFD6 /* SeeMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCBEB33528EBB45300B9AFD6 /* SeeMoreTableViewCell.xib */; };
 		BCC2A1B028E7CE4E00DCDEBE /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1A928E7CE4E00DCDEBE /* Poppins-SemiBold.otf */; };
 		BCC2A1B128E7CE4E00DCDEBE /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AA28E7CE4E00DCDEBE /* Poppins-Medium.otf */; };
 		BCC2A1B228E7CE4E00DCDEBE /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCC2A1AB28E7CE4E00DCDEBE /* Poppins-Bold.otf */; };
@@ -105,6 +111,12 @@
 		BC8E393028E7750900518679 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		BC8E393228E7762000518679 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		BC8E393428E786A200518679 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BCBEB32B28EB975300B9AFD6 /* SeeMoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewModel.swift; sourceTree = "<group>"; };
+		BCBEB32D28EB976500B9AFD6 /* SeeMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreViewController.swift; sourceTree = "<group>"; };
+		BCBEB32E28EB976500B9AFD6 /* SeeMoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeMoreViewController.xib; sourceTree = "<group>"; };
+		BCBEB33128EB977500B9AFD6 /* SeeMoreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreProtocols.swift; sourceTree = "<group>"; };
+		BCBEB33428EBB45300B9AFD6 /* SeeMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreTableViewCell.swift; sourceTree = "<group>"; };
+		BCBEB33528EBB45300B9AFD6 /* SeeMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeMoreTableViewCell.xib; sourceTree = "<group>"; };
 		BCC2A1A928E7CE4E00DCDEBE /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
 		BCC2A1AA28E7CE4E00DCDEBE /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		BCC2A1AB28E7CE4E00DCDEBE /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
@@ -350,6 +362,41 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		BCBEB32828EB972D00B9AFD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BCBEB32B28EB975300B9AFD6 /* SeeMoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BCBEB32928EB973200B9AFD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCBEB33328EBB43F00B9AFD6 /* Cell */,
+				BCBEB32D28EB976500B9AFD6 /* SeeMoreViewController.swift */,
+				BCBEB32E28EB976500B9AFD6 /* SeeMoreViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCBEB32A28EB973600B9AFD6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BCBEB33128EB977500B9AFD6 /* SeeMoreProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BCBEB33328EBB43F00B9AFD6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCBEB33428EBB45300B9AFD6 /* SeeMoreTableViewCell.swift */,
+				BCBEB33528EBB45300B9AFD6 /* SeeMoreTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BCC2A1A728E7CE3400DCDEBE /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +479,9 @@
 		BCC3495228EA9B0D001B4F97 /* SeeMore */ = {
 			isa = PBXGroup;
 			children = (
+				BCBEB32A28EB973600B9AFD6 /* Protocols */,
+				BCBEB32928EB973200B9AFD6 /* View */,
+				BCBEB32828EB972D00B9AFD6 /* ViewModel */,
 			);
 			path = SeeMore;
 			sourceTree = "<group>";
@@ -572,8 +622,10 @@
 				BC8D3C4328E93A23005B8848 /* FilterCollectionViewCell.xib in Resources */,
 				BCC2A1B228E7CE4E00DCDEBE /* Poppins-Bold.otf in Resources */,
 				BCC2A1B028E7CE4E00DCDEBE /* Poppins-SemiBold.otf in Resources */,
+				BCBEB33728EBB45300B9AFD6 /* SeeMoreTableViewCell.xib in Resources */,
 				BCC2A1B528E7CE4E00DCDEBE /* Poppins-Thin.otf in Resources */,
 				BCC2A1B428E7CE4E00DCDEBE /* Poppins-Regular.otf in Resources */,
+				BCBEB33028EB976500B9AFD6 /* SeeMoreViewController.xib in Resources */,
 				BC8D3C4828E93DA7005B8848 /* MovieCollectionViewCell.xib in Resources */,
 				BCC2A1C528E7D82E00DCDEBE /* DetailViewController.xib in Resources */,
 				BCC2A1B328E7CE4E00DCDEBE /* Poppins-ExtraLight.otf in Resources */,
@@ -609,8 +661,11 @@
 				BCF1689728E960D300C4C24D /* NewRelesesRequest.swift in Sources */,
 				BC8E392528E76DCB00518679 /* MainViewController.swift in Sources */,
 				BC8D3C2C28E9395C005B8848 /* FilterMovies.swift in Sources */,
+				BCBEB33228EB977500B9AFD6 /* SeeMoreProtocols.swift in Sources */,
 				BC8E393528E786A200518679 /* Constants.swift in Sources */,
 				BCC2A1C928E7EAA400DCDEBE /* UIView+Extension.swift in Sources */,
+				BCBEB32F28EB976500B9AFD6 /* SeeMoreViewController.swift in Sources */,
+				BCBEB32C28EB975300B9AFD6 /* SeeMoreViewModel.swift in Sources */,
 				BCC2A1CE28E7EFBE00DCDEBE /* UIColor+Extension.swift in Sources */,
 				BCC2A1BB28E7D1C200DCDEBE /* UINavigationBar+Extension.swift in Sources */,
 				BC8D3C4E28E9483A005B8848 /* DetailProtocols.swift in Sources */,
@@ -627,6 +682,7 @@
 				BC8D3C4728E93DA7005B8848 /* MovieCollectionViewCell.swift in Sources */,
 				BCC3494D28EA8BAA001B4F97 /* TrendsRequest.swift in Sources */,
 				BC8D3C4B28E94573005B8848 /* HomeProtocols.swift in Sources */,
+				BCBEB33628EBB45300B9AFD6 /* SeeMoreTableViewCell.swift in Sources */,
 				BC8E392028E76D4000518679 /* Coordinator.swift in Sources */,
 				BC8E391A28E76C1600518679 /* HomeViewModel.swift in Sources */,
 				BC8E392F28E774EC00518679 /* Reachability.swift in Sources */,

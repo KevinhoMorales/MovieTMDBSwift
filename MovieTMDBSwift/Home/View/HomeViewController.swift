@@ -49,6 +49,19 @@ final class HomeViewController: MainViewController {
         setUpReccommendedForYouCollectionView()
         setUpFilterMoviesCollectionView()
     }
+    
+    @IBAction func seeMoreNewReleasesAction(_ sender: Any) {
+        coordinator?.seeMoreView(movies: viewModel?.newReleasesMovies)
+    }
+    
+    @IBAction func
+    seeMoreTrendsAction(_ sender: Any) {
+        coordinator?.seeMoreView(movies: viewModel?.trendsMovies)
+    }
+    
+    @IBAction func seeMoreRecommendedForYouAction(_ sender: Any) {
+        coordinator?.seeMoreView(movies: viewModel?.recommendedForYourMovies)
+    }
 }
 
 extension HomeViewController: HomeViewProtocol {

@@ -59,6 +59,9 @@
                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="VER MÁS"/>
+                                                    <connections>
+                                                        <action selector="seeMoreNewReleasesAction:" destination="-1" eventType="touchUpInside" id="xrg-u8-bcS"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -97,6 +100,9 @@
                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="VER MÁS"/>
+                                                    <connections>
+                                                        <action selector="seeMoreTrendsAction:" destination="-1" eventType="touchUpInside" id="n3H-Ou-T9P"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -135,6 +141,9 @@
                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="VER MÁS"/>
+                                                    <connections>
+                                                        <action selector="seeMoreRecommendedForYouAction:" destination="-1" eventType="touchUpInside" id="062-qI-cV4"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>

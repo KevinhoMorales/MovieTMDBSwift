@@ -8,7 +8,7 @@
 import Foundation
 
 import UIKit
-import CoreLocation
+import RxRelay
 
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController = UINavigationController()
@@ -19,6 +19,15 @@ class MainCoordinator: Coordinator {
         homeView.viewModel = homeViewModel
         homeView.coordinator = self
         navigationController.pushViewController(homeView, animated: true)
+    }
+    
+    func seeMoreView(movies: BehaviorRelay<[Movie]>?) {
+        let seeMoreView = SeeMoreViewController(nibName: "SeeMoreViewController", bundle: Bundle.main)
+        let seeMoreViewModel = SeeMoreViewModel(view: seeMoreView)
+        seeMoreView.viewModel = seeMoreViewModel
+        seeMoreView.viewModel?.movies = movies
+        seeMoreView.coordinator = self
+        navigationController.pushViewController(seeMoreView, animated: true)
     }
     
     func detailView(movie: Movie) {

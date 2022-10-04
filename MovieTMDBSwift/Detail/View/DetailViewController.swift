@@ -37,8 +37,22 @@ class DetailViewController: MainViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.viewDidLoad()
+        setUpView()
+    }
+
+    private func setUpView() {
+        setUpData()
+        gradientView.setGradientBackground(colorTops: .white, colorBottoms: .black)
+        addBackButton()
     }
     
+    private func setUpData() {
+        let urlString = API.imageURL + viewModel!.movie!.image
+        movieImageView.downloadImageWithAnimation(urlString: urlString)
+        movieNameLabel.text = viewModel!.movie!.title
+        voteAverageLabel.text = "\(viewModel!.movie!.voteAverage)"
+        languageLabel.text = viewModel!.movie!.originalLanguage
+    }
 }
 
 extension DetailViewController: DetailViewProtocol {
