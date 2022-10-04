@@ -54,9 +54,8 @@ class DetailViewController: MainViewController {
         movieNameLabel.text = viewModel!.movie!.title
         voteAverageLabel.text = viewModel!.movie!.voteAverage.roundValue()
         languageLabel.text = viewModel!.movie!.originalLanguage
-        let year = viewModel!.movie!.releaseDate.split(separator: "-")[0]
-        releaseDateYearLabel.text = "\(year)"
-        categoriesLabel.text = "Heartfelt • Romance • Sci-fi • Drama"
+        releaseDateYearLabel.text = viewModel!.getYearByReleaseDate()
+        categoriesLabel.text = viewModel!.getGenres()
     }
     @IBAction func seeTrailerAction(_ sender: Any) {
         viewModel?.openTrailer()

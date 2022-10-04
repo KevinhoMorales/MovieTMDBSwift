@@ -12,6 +12,8 @@ protocol DetailViewModelProtocol {
     var movie: Movie? { get set }
     func viewDidLoad()
     func openTrailer()
+    func getYearByReleaseDate() -> String
+    func getGenres() -> String
 }
 
 protocol DetailViewProtocol {

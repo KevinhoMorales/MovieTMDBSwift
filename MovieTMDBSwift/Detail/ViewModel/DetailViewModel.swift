@@ -25,4 +25,14 @@ final class DetailViewModel: DetailViewModelProtocol {
         guard let url = URL(string: youTubeURL) else { return }
         view.present(SFSafariViewController(url: url), animated: true)
     }
+    
+    func getYearByReleaseDate() -> String {
+        let year = movie!.releaseDate.split(separator: "-")[0]
+        return "\(year)"
+    }
+    
+    func getGenres() -> String {
+        let genres = movie!.genres!.compactMap { $0.name }.joined(separator: " • ")
+        return genres
+    }
 }
