@@ -1,5 +1,5 @@
 //
-//  NewRelesesRequest.swift
+//  NewReleasesRequest.swift
 //  MovieTMDBSwift
 //
 //  Created by Kevin Morales on 10/2/22.
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-struct NewRelesesRequest: MoviesRequest {
+struct NewReleasesRequest: MoviesRequest {
     func getMovies<T>(filter: FilterMovies) -> RxSwift.Observable<[T]> {
         Loading.show(Constants.loadingMovies)
         return Observable.create { observer in

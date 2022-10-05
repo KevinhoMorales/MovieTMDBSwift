@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SeeMoreTableViewCell: UITableViewCell {
+final class SeeMoreTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet weak var backgroundStackView: UIView! {
