@@ -8,6 +8,8 @@
 import UIKit
 
 class SeeMoreTableViewCell: UITableViewCell {
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var backgroundStackView: UIView! {
         didSet {
             backgroundStackView.setCard()

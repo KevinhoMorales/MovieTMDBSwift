@@ -15,6 +15,7 @@ enum Filters {
 
 final class FilterCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var backgroundStackView: UIStackView! {
         didSet {
             backgroundStackView.setFilterCard()
@@ -22,11 +23,21 @@ final class FilterCollectionViewCell: UICollectionViewCell {
     }
     @IBOutlet weak var filterLabel: UILabel!
     
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                filterLabel.textColor = .backgroundColor()
+                backgroundStackView.backgroundColor = .labelColor()
+            } else {
+                filterLabel.textColor = .labelColor()
+                backgroundStackView.backgroundColor = .backgroundColor()
+            }
+        }
+    }
+    
     static let FILTER_CELL_ID = "FILTER_CELL_ID"
     
     func setUpCell(filter: FilterMovies) {
         filterLabel.text = filter.title
-        filterLabel.textColor = filter.titleColor
-        backgroundStackView.backgroundColor = filter.backgroundColor
     }
 }

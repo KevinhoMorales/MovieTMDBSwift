@@ -9,6 +9,7 @@ import UIKit
 
 final class MovieCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var backgroundStackView: UIStackView! {
         didSet {
             backgroundStackView.setCard()

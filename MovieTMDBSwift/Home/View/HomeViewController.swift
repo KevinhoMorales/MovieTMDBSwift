@@ -38,6 +38,11 @@ final class HomeViewController: MainViewController {
         setUpView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel?.viewDidAppear(animated)
+    }
+    
     private func setUpView() {
         navigationItem.setTitle(title: "eMovie", subtitle: "")
         setUpCollectionsView()
