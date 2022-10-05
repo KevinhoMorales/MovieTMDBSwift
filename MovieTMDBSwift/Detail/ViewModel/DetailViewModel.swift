@@ -18,22 +18,26 @@ final class DetailViewModel: DetailViewModelProtocol {
     
     func viewDidLoad() {
         
-    }    
+    }
     
-    func openTrailer() {
-        let youTubeURL = Constants.youtubeURL + movie!.videos!.videos.first!.key
-        guard let url = URL(string: youTubeURL) else { return }
-        view.present(SFSafariViewController(url: url), animated: true)
+    func openTrailerOnYouTube() {
+        let youtubeKey = getMovie().videos!.videos.first!.key
+        youtubeKey.openYouTubeByKey()
     }
     
     func getYearByReleaseDate() -> String {
-        let year = movie!.releaseDate.split(separator: "-")[0]
+        let year = getMovie().releaseDate.split(separator: "-")[0]
         return "\(year)"
     }
     
     func getGenres() -> String {
-        guard let genres = movie!.genres else { return "No dispone de categorías todavía" }
+        guard let genres = getMovie().genres else { return "No dispone de categorías todavía" }
         let genresString = genres.compactMap { $0.name }.joined(separator: " • ")
         return genresString
+    }
+    
+    func getMovie() -> Movie! {
+        guard let movie = movie else { return nil }
+        return movie
     }
 }

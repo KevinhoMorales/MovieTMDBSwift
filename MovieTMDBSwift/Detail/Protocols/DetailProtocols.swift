@@ -11,11 +11,13 @@ protocol DetailViewModelProtocol {
     var view: DetailViewController { get set }
     var movie: Movie? { get set }
     func viewDidLoad()
-    func openTrailer()
+    func openTrailerOnYouTube()
     func getYearByReleaseDate() -> String
     func getGenres() -> String
+    func getMovie() -> Movie!
 }
 
 protocol DetailViewProtocol {
     var viewModel: DetailViewModelProtocol? { get set }
+    func seeTrailerAction()
 }

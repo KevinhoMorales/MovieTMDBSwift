@@ -58,7 +58,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="VER MÁS"/>
+                                                    <state key="normal" title="VER MÁS">
+                                                        <color key="titleColor" name="BlueColor"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="seeMoreNewReleasesAction:" destination="-1" eventType="touchUpInside" id="xrg-u8-bcS"/>
                                                     </connections>
@@ -100,7 +102,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="VER MÁS"/>
+                                                    <state key="normal" title="VER MÁS">
+                                                        <color key="titleColor" name="BlueColor"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="seeMoreTrendsAction:" destination="-1" eventType="touchUpInside" id="n3H-Ou-T9P"/>
                                                     </connections>
@@ -142,7 +146,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="VER MÁS"/>
+                                                    <state key="normal" title="VER MÁS">
+                                                        <color key="titleColor" name="BlueColor"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="seeMoreRecommendedForYouAction:" destination="-1" eventType="touchUpInside" id="062-qI-cV4"/>
                                                     </connections>
@@ -224,6 +230,9 @@
     <resources>
         <namedColor name="BackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LabelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

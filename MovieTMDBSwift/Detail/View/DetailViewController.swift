@@ -49,20 +49,22 @@ class DetailViewController: MainViewController {
     }
     
     private func setUpData() {
-        let urlString = API.imageURL + viewModel!.movie!.image
+        let urlString = API.imageURL + viewModel!.getMovie().image
         movieImageView.downloadImageWithAnimation(urlString: urlString)
-        movieNameLabel.text = viewModel!.movie!.title
-        voteAverageLabel.text = viewModel!.movie!.voteAverage.roundValue()
-        languageLabel.text = viewModel!.movie!.originalLanguage
+        movieNameLabel.text = viewModel!.getMovie().title
+        voteAverageLabel.text = viewModel!.getMovie().voteAverage.roundValue()
+        languageLabel.text = viewModel!.getMovie().originalLanguage
         releaseDateYearLabel.text = viewModel!.getYearByReleaseDate()
         categoriesLabel.text = viewModel!.getGenres()
-        sinopsisLabel.text = viewModel!.movie!.sinopsis
+        sinopsisLabel.text = viewModel!.getMovie().sinopsis
     }
     @IBAction func seeTrailerAction(_ sender: Any) {
-        viewModel?.openTrailer()
+        seeTrailerAction()
     }
 }
 
 extension DetailViewController: DetailViewProtocol {
-    
+    func seeTrailerAction() {
+        viewModel?.openTrailerOnYouTube()
+    }
 }
