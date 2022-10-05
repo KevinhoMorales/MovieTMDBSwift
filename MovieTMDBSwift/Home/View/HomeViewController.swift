@@ -16,18 +16,8 @@ final class HomeViewController: MainViewController {
     @IBOutlet weak var trendsCollectionView: UICollectionView!
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     @IBOutlet weak var recommendedForYouCollectionView: UICollectionView!
-    @IBOutlet weak var recommendedForYouHeightConstraint: NSLayoutConstraint! {
-        didSet {
-            recommendedForYouHeightConstraint.constant = 600
-        }
-    }
-    @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint! {
-        didSet {
-            viewHeightConstraint.constant = 775
-        }
-    }
-    
-    
+    @IBOutlet weak var recommendedForYouHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - VIEWMODEL
     var viewModel: HomeViewModelProtocol?
@@ -53,6 +43,7 @@ final class HomeViewController: MainViewController {
         setUpTrendsCollectionView()
         setUpReccommendedForYouCollectionView()
         setUpFilterMoviesCollectionView()
+        setUpCollectionViewDelegate()
     }
     
     @IBAction func seeMoreNewReleasesAction(_ sender: Any) {
@@ -172,5 +163,25 @@ extension HomeViewController {
                 }, onCompleted: {
                     Loading.hide()
                 }).disposed(by: disposeBag)
+    }
+    
+    private func setUpCollectionViewDelegate() {
+        recommendedForYouCollectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numbersOfCellsOfRow = 2
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let totalSpace = flowLayout.sectionInset.left + flowLayout.sectionInset.right + (flowLayout.minimumInteritemSpacing * CGFloat(numbersOfCellsOfRow - 1))
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(numbersOfCellsOfRow))
+        return CGSize(width: size, height: 205)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        recommendedForYouCollectionView.collectionViewLayout.invalidateLayout()
     }
 }

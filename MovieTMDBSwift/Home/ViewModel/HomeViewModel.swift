@@ -101,11 +101,11 @@ final class HomeViewModel: HomeViewModelProtocol {
             recommendedForYourMovies?.accept(allMovies)
             recommendedForYourAllMovies?.accept(movies)
         case .bySpanish:
-            let moviesBySpanish = movies.filter { $0.originalLanguage == "es" }
+            let moviesBySpanish = movies.filter { $0.originalLanguage == Constants.SPANISH_FILTER }
             recommendedForYourMovies?.accept(moviesBySpanish)
             recommendedForYourAllMovies?.accept(moviesBySpanish)
         case .byRelease1993:
-            let moviesBy1993 = movies.filter { $0.releaseDate.contains("1993") }
+            let moviesBy1993 = movies.filter { $0.releaseDate.contains(Constants.YEAR_1993_FILTER) }
             recommendedForYourMovies?.accept(moviesBy1993)
             recommendedForYourAllMovies?.accept(moviesBy1993)
         }

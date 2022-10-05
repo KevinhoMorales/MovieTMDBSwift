@@ -11,6 +11,8 @@ struct Constants {
     static let loadingMovies = "LOADING MOVIES"
     static let loadingMovieDetail = "LOADING DETAIL"
     static let filterOptions = ["Todas", "En español", "Lanzadas en 1993"]
+    static let SPANISH_FILTER = "es"
+    static let YEAR_1993_FILTER = "1993"
     static let youtubeURL = "https://www.youtube.com/watch?v="
 }
 
