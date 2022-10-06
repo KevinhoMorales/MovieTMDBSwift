@@ -38,7 +38,7 @@ final class SeeMoreViewController: MainViewController {
                     let id = String(movie.movieID)
                     self?.getDetailMovie(id: id)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                 }, onCompleted: {
                 }).disposed(by: disposeBag)
     }
@@ -76,7 +76,7 @@ extension SeeMoreViewController {
                 onNext: { [weak self] movies in
                     self?.coordinator?.detailView(movie: movies)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                     Loading.hide()
                 }, onCompleted: {
                     Loading.hide()

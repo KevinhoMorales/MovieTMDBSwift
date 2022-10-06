@@ -30,12 +30,12 @@ class MainViewController: UIViewController {
     
     private func checkNetworkIsAvailable() {
         if !Reachability.shared.isConnectedToNetwork() {
-            Alerts.warning(title: "Sin internet, por favor revisa tu conexión", buttonTitle: "OK", viewcontroller: self)
+            Alerts.warning(title: Constants.NOT_INTERNET, buttonTitle: Constants.OK, viewcontroller: self)
         }
     }
     
     func addBackButton() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back-icon"), style: .done, target: self, action: #selector(backAction))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.Images.BACK_ICON), style: .done, target: self, action: #selector(backAction))
     }
     
     @objc

@@ -73,7 +73,7 @@ extension HomeViewController: HomeViewProtocol {
                     let id = String(movie.movieID)
                     self?.getDetailMovie(id: id)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                 }, onCompleted: {
                 }).disposed(by: disposeBag)
     }
@@ -90,7 +90,7 @@ extension HomeViewController: HomeViewProtocol {
                     let id = String(movie.movieID)
                     self?.getDetailMovie(id: id)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                 }, onCompleted: {
                 }).disposed(by: disposeBag)
     }
@@ -107,7 +107,7 @@ extension HomeViewController: HomeViewProtocol {
                     let id = String(movie.movieID)
                     self?.getDetailMovie(id: id)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                 }, onCompleted: {
                 }).disposed(by: disposeBag)
     }
@@ -123,7 +123,7 @@ extension HomeViewController: HomeViewProtocol {
                 onNext: { [weak self] filter in
                     self?.viewModel?.getTrendsMovies(filter: filter)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                 }, onCompleted: {
                 }).disposed(by: disposeBag)
     }
@@ -158,7 +158,7 @@ extension HomeViewController {
                 onNext: { [weak self] movies in
                     self?.coordinator?.detailView(movie: movies)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                     Loading.hide()
                 }, onCompleted: {
                     Loading.hide()

@@ -66,7 +66,7 @@ final class HomeViewModel: HomeViewModelProtocol {
                     self?.newReleasesAllMovies?.accept(movies)
                     self?.view.newReleasesCollectionView.reloadData()
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!.view)
                     Loading.hide()
                 }, onCompleted: {
                     Loading.hide()
@@ -83,7 +83,7 @@ final class HomeViewModel: HomeViewModelProtocol {
                     self?.setTrendsMovies(movies: movies)
                     self?.trendsAllMovies?.accept(movies)
                 }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: "OK", viewcontroller: self!.view)
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!.view)
                     Loading.hide()
                 }, onCompleted: {
                     Loading.hide()

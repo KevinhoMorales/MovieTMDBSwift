@@ -15,7 +15,6 @@ final class Loading {
     
     static func show() {
         guard let currentMainWindow = UIApplication.shared.windows.filter({$0.isKeyWindow}).first else {
-            print("No main window.")
             return
         }
         show(currentMainWindow)
@@ -23,7 +22,6 @@ final class Loading {
     
     static func show(_ loadingText: String) {
         guard let currentMainWindow = UIApplication.shared.windows.filter({$0.isKeyWindow}).first else {
-            print("No main window.")
             return
         }
         show(currentMainWindow, loadingText: loadingText)
@@ -34,10 +32,8 @@ final class Loading {
     }
     
     static func show(_ overlayTarget : UIView, loadingText: String?) {
-        // Clear it first in case it was already shown
         hide()
         
-        // Create the overlay
         let overlay = UIView()
         overlay.alpha = 0
         overlay.backgroundColor = UIColor.black
@@ -48,7 +44,6 @@ final class Loading {
         overlay.widthAnchor.constraint(equalTo: overlayTarget.widthAnchor).isActive = true
         overlay.heightAnchor.constraint(equalTo: overlayTarget.heightAnchor).isActive = true
         
-        // Create and animate the activity indicator
         let indicator = UIActivityIndicatorView(style: .medium)
         indicator.color = .white
         indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +53,6 @@ final class Loading {
         indicator.centerXAnchor.constraint(equalTo: overlay.centerXAnchor).isActive = true
         indicator.centerYAnchor.constraint(equalTo: overlay.centerYAnchor).isActive = true
         
-        // Create label
         if let textString = loadingText {
             let label = UILabel()
             label.text = textString.uppercased()
@@ -70,7 +64,6 @@ final class Loading {
             label.centerXAnchor.constraint(equalTo: indicator.centerXAnchor).isActive = true
         }
         
-        // Animate the overlay to show
         UIView.animate(withDuration: 0.5) {
             overlay.alpha = overlay.alpha > 0 ? 0 : 0.5
         }

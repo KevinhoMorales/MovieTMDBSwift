@@ -14,6 +14,11 @@ struct Constants {
     static let SPANISH_FILTER = "es"
     static let YEAR_1993_FILTER = "1993"
     static let youtubeURL = "https://www.youtube.com/watch?v="
+    static let NOT_INTERNET = "Sin internet, por favor revisa tu conexión"
+    static let OK = "OK"
+    struct Images {
+        static let BACK_ICON = "back-icon"
+    }
 }
 
 struct API {
