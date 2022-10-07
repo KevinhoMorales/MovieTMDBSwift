@@ -10,11 +10,11 @@ import Foundation
 struct Constants {
     static let loadingMovies = "LOADING MOVIES"
     static let loadingMovieDetail = "LOADING DETAIL"
-    static let filterOptions = ["Todas", "En español", "Lanzadas en 1993"]
+    static let filterOptions = ["All", "Spanish", "Released in 1993"]
     static let SPANISH_FILTER = "es"
     static let YEAR_1993_FILTER = "1993"
     static let youtubeURL = "https://www.youtube.com/watch?v="
-    static let NOT_INTERNET = "Sin internet, por favor revisa tu conexión"
+    static let NOT_INTERNET = "Poor connection, try it again please"
     static let OK = "OK"
     struct Images {
         static let BACK_ICON = "back-icon"

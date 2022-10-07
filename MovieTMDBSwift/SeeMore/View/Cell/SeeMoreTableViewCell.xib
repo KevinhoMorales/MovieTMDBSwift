@@ -13,6 +13,9 @@
         <array key="Poppins-Light.otf">
             <string>Poppins-Light</string>
         </array>
+        <array key="Poppins-Medium.otf">
+            <string>Poppins-Medium</string>
+        </array>
         <array key="Poppins-Regular.otf">
             <string>Poppins-Regular</string>
         </array>
@@ -53,24 +56,33 @@
                                 <rect key="frame" x="128" y="0.0" width="176" height="164"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-MC-QAW">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="HsF-hX-Nt4"/>
+                                            <constraint firstAttribute="height" constant="25" id="HsF-hX-Nt4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                                         <color key="textColor" name="LabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jc-0W-or5">
+                                        <rect key="frame" x="0.0" y="25" width="176" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="FOI-bk-yob"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
+                                        <color key="textColor" name="LabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SO-WN-0rN">
-                                        <rect key="frame" x="0.0" y="30" width="176" height="104"/>
+                                        <rect key="frame" x="0.0" y="40" width="176" height="109"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                         <color key="textColor" name="LabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXO-Sk-Ri9">
-                                        <rect key="frame" x="0.0" y="134" width="176" height="30"/>
+                                        <rect key="frame" x="0.0" y="149" width="176" height="15"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="9XV-4j-06J"/>
+                                            <constraint firstAttribute="height" constant="15" id="9XV-4j-06J"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                         <color key="textColor" name="LabelColor"/>
@@ -93,6 +105,7 @@
             <connections>
                 <outlet property="backgroundStackView" destination="adG-fk-0YW" id="Ful-eJ-9K6"/>
                 <outlet property="movieImageView" destination="gCg-AW-r45" id="tKu-G6-onG"/>
+                <outlet property="originalTitleLabel" destination="5jc-0W-or5" id="yKI-J7-uuv"/>
                 <outlet property="releaseDateLabel" destination="ZXO-Sk-Ri9" id="wrx-an-E0N"/>
                 <outlet property="sinopsisLabel" destination="2SO-WN-0rN" id="gQh-hT-Yrn"/>
                 <outlet property="titleLabel" destination="hfd-MC-QAW" id="Pw0-At-2mU"/>

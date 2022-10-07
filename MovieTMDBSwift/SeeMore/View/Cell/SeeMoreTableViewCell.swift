@@ -19,13 +19,15 @@ final class SeeMoreTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sinopsisLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var originalTitleLabel: UILabel!
     
     static let SEE_MORE_CELL_ID = "SEE_MORE_CELL_ID"
     
     func setUpCell(movie: Movie) {
         titleLabel.text = movie.title
+        originalTitleLabel.text = movie.originalTitle
         sinopsisLabel.text = movie.sinopsis
-        releaseDateLabel.text = "Lanzada en \(movie.releaseDate)"
+        releaseDateLabel.text = "Released in \(movie.releaseDate)"
         let urlString = API.imageURL + movie.image
         movieImageView.downloadImageWithAnimation(urlString: urlString)
     }
