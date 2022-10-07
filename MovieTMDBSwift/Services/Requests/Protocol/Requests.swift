@@ -13,5 +13,5 @@ protocol MoviesRequestProtocol {
 }
 
 protocol DetailRequestProtocol {
-    func getMovie(id: String) throws -> RxSwift.Observable<Movie>
+    func getMovie(id: String) -> RxSwift.Observable<Movie>
 }

@@ -9,7 +9,6 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var window: UIWindow?
     private let coordinator = MainCoordinator()
     
@@ -24,6 +23,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = coordinator.navigationController
         window?.makeKeyAndVisible()
     }
-    
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-final class MoviesRequest: MoviesRequestProtocol {    
+struct MoviesRequest: MoviesRequestProtocol {    
     func getMovies(endpoint: String, filter: FilterMovies?) -> RxSwift.Observable<[Movie]> {
         Loading.show(Constants.loadingMovies)
         return Observable.create { observer in

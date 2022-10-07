@@ -13,7 +13,7 @@ enum Errors: LocalizedError {
     case invalidResponse
     case failedRequest(description: String)
     
-    var errorDescription: String? {
+    var errorDescription: String {
         switch self {
         case .failedRequest(let description):
             return description

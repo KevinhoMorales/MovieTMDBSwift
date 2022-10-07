@@ -21,7 +21,7 @@ protocol HomeViewModelProtocol {
     func viewDidLoad()
     func viewDidAppear(_ animated: Bool)
     func getTrendsMovies(endpoint: String, filter: FilterMovies?)
-    func getDetailMovie(id: String) -> Observable<Movie>
+    func getDetailMovie(id: String)
 }
 
 protocol HomeViewProtocol {

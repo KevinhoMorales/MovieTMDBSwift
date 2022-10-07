@@ -152,17 +152,6 @@ extension HomeViewController: HomeViewProtocol {
 extension HomeViewController {
     private func getDetailMovie(id: String) {
         viewModel?.getDetailMovie(id: id)
-            .subscribe(on: MainScheduler.instance)
-            .observe(on: MainScheduler.instance)
-            .subscribe(
-                onNext: { [weak self] movies in
-                    self?.coordinator?.detailView(movie: movies)
-                }, onError: { [weak self] error in
-                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
-                    Loading.hide()
-                }, onCompleted: {
-                    Loading.hide()
-                }).disposed(by: disposeBag)
     }
     
     private func setUpCollectionViewDelegate() {

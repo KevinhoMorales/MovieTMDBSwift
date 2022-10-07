@@ -281,6 +281,8 @@
 		BC8E38F728E7697500518679 /* MovieTMDBSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				BCAABB3828F0B8D2002331A7 /* Services */,
+				BCAABB3728F0B8D0002331A7 /* Mock */,
 				BC8E38F828E7697500518679 /* MovieTMDBSwiftTests.swift */,
 			);
 			path = MovieTMDBSwiftTests;
@@ -370,6 +372,20 @@
 				BC8E393428E786A200518679 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BCAABB3728F0B8D0002331A7 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		BCAABB3828F0B8D2002331A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BCBEB32828EB972D00B9AFD6 /* ViewModel */ = {

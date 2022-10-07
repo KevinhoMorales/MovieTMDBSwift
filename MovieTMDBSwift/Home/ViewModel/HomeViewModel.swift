@@ -91,8 +91,19 @@ final class HomeViewModel: HomeViewModelProtocol {
                 }).disposed(by: view.disposeBag)
     }
     
-    func getDetailMovie(id: String) -> Observable<Movie> {
-        DetailMovieRequest().getMovie(id: id)
+    func getDetailMovie(id: String) {
+        DataManager.getMovieById(id: id)
+            .subscribe(on: MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] movie in
+                    self?.view.coordinator?.detailView(movie: movie)
+                }, onError: { [weak self] error in
+                    Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!.view)
+                    Loading.hide()
+                }, onCompleted: {
+                    Loading.hide()
+                }).disposed(by: view.disposeBag)
     }
     
     private func setRecommendedForYouMovies(movies: [Movie], filter: FilterMovies) {
