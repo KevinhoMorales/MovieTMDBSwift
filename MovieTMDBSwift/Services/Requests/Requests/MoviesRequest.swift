@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 final class MoviesRequest: MoviesRequestProtocol {    
-    func getMovies(endpoint: String, filter: FilterMovies) -> RxSwift.Observable<[Movie]> {
+    func getMovies(endpoint: String, filter: FilterMovies?) -> RxSwift.Observable<[Movie]> {
         Loading.show(Constants.loadingMovies)
         return Observable.create { observer in
             let session = URLSession.shared
@@ -20,7 +20,10 @@ final class MoviesRequest: MoviesRequestProtocol {
             request.timeoutInterval = TimeInterval(10)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             session.dataTask(with: request) { (data, response, error) in
-                guard let data = data, error == nil, let response = response as? HTTPURLResponse else { return }
+                guard let data = data, error == nil, let response = response as? HTTPURLResponse else {
+                    observer.onError(Errors.invalidResponse)
+                    return
+                }
                 switch response.statusCode {
                 case 200:
                     do {

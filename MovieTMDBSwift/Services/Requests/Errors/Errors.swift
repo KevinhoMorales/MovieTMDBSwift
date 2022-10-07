@@ -10,6 +10,7 @@ import Foundation
 enum Errors: LocalizedError {
     case notFound
     case serverProblem
+    case invalidResponse
     case failedRequest(description: String)
     
     var errorDescription: String? {
@@ -20,6 +21,8 @@ enum Errors: LocalizedError {
             return "ERROR 404"
         case .serverProblem:
             return "ERROR 500"
+        case .invalidResponse:
+            return "RESPUESTA INVÁLIDA"
         }
     }    
 }

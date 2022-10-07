@@ -11,6 +11,7 @@ import RxRelay
 import UIKit
 
 final class HomeViewModel: HomeViewModelProtocol {
+    
     var view: HomeViewController
     var newReleasesMovies: BehaviorRelay<[Movie]>?
     var trendsMovies: BehaviorRelay<[Movie]>?
@@ -52,12 +53,12 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private func getMovies() {
         guard let filter = filterMovies?.value.first else { return }
-        getNewReleasesMovies(endpoint: Endpoints.newReleasesURL, filter: filter)
+        getNewReleasesMovies(endpoint: Endpoints.newReleasesURL)
         getTrendsMovies(endpoint: Endpoints.trendsURL, filter: filter)
     }
     
-    private func getNewReleasesMovies(endpoint: String, filter: FilterMovies) {
-        DataManager.getMovies(endpoint: endpoint, filter: filter)
+    private func getNewReleasesMovies(endpoint: String) {
+        DataManager.getMovies(endpoint: endpoint, filter: nil)
             .subscribe(on: MainScheduler.instance)
             .observe(on: MainScheduler.instance)
             .subscribe(
@@ -73,7 +74,8 @@ final class HomeViewModel: HomeViewModelProtocol {
                 }).disposed(by: view.disposeBag)
     }
     
-    func getTrendsMovies(endpoint: String, filter: FilterMovies) {
+    func getTrendsMovies(endpoint: String, filter: FilterMovies?) {
+        guard let filter = filter else { return }
         DataManager.getMovies(endpoint: endpoint, filter: filter)
             .subscribe(on: MainScheduler.instance)
             .observe(on: MainScheduler.instance)
@@ -81,7 +83,6 @@ final class HomeViewModel: HomeViewModelProtocol {
                 onNext: { [weak self] movies in
                     self?.setRecommendedForYouMovies(movies: movies, filter: filter)
                     self?.setTrendsMovies(movies: movies)
-                    self?.trendsAllMovies?.accept(movies)
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!.view)
                     Loading.hide()
@@ -116,6 +117,7 @@ final class HomeViewModel: HomeViewModelProtocol {
     private func setTrendsMovies(movies: [Movie]) {
         let moviesTrends = Array(movies.prefix(upTo: 6))
         trendsMovies?.accept(moviesTrends)
+        trendsAllMovies?.accept(movies)
         view.trendsCollectionView.reloadData()
     }
     
