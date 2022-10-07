@@ -121,7 +121,7 @@ extension HomeViewController: HomeViewProtocol {
         filtersCollectionView.rx.modelSelected(FilterMovies.self)
             .subscribe(
                 onNext: { [weak self] filter in
-                    self?.viewModel?.getTrendsMovies(filter: filter)
+                    self?.viewModel?.getTrendsMovies(endpoint: Endpoints.trendsURL, filter: filter)
                 }, onError: { [weak self] error in
                     Alerts.warning(title: error.localizedDescription, buttonTitle: Constants.OK, viewcontroller: self!)
                 }, onCompleted: {

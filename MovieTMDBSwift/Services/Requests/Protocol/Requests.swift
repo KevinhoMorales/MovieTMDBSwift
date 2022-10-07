@@ -8,10 +8,10 @@
 import Foundation
 import RxSwift
 
-protocol MoviesRequest {
-    func getMovies<T>(filter: FilterMovies) -> Observable<[T]>
+protocol MoviesRequestProtocol {
+    func getMovies(endpoint: String, filter: FilterMovies) -> Observable<[Movie]>
 }
 
-protocol DetailRequest {
-    func getMovie(id: String) -> RxSwift.Observable<Movie>
+protocol DetailRequestProtocol {
+    func getMovie(id: String) throws -> RxSwift.Observable<Movie>
 }

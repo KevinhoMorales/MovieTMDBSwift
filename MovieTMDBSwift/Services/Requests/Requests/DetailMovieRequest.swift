@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-struct DetailMovieRequest: DetailRequest {
+struct DetailMovieRequest: DetailRequestProtocol {
     func getMovie(id: String) -> RxSwift.Observable<Movie> {
         Loading.show(Constants.loadingMovieDetail)
         return Observable.create { observer in
@@ -28,10 +28,12 @@ struct DetailMovieRequest: DetailRequest {
                         let movie = try decoder.decode(Movie.self, from: data)
                         observer.onNext(movie)
                     } catch let error {
-                        observer.onError(error)
+                        observer.onError(Errors.failedRequest(description: error.localizedDescription))
                     }
                 case 404:
-                    observer.onError(error!)
+                    observer.onError(Errors.notFound)
+                case 500:
+                    observer.onError(Errors.serverProblem)
                 default: break
                 }
                 observer.onCompleted()

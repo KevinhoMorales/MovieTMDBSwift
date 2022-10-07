@@ -1,5 +1,5 @@
 //
-//  NewReleasesRequest.swift
+//  MoviesRequest.swift
 //  MovieTMDBSwift
 //
 //  Created by Kevin Morales on 10/2/22.
@@ -8,12 +8,12 @@
 import Foundation
 import RxSwift
 
-struct NewReleasesRequest: MoviesRequest {
-    func getMovies<T>(filter: FilterMovies) -> RxSwift.Observable<[T]> {
+final class MoviesRequest: MoviesRequestProtocol {    
+    func getMovies(endpoint: String, filter: FilterMovies) -> RxSwift.Observable<[Movie]> {
         Loading.show(Constants.loadingMovies)
         return Observable.create { observer in
             let session = URLSession.shared
-            let urlString = API.apiURL + Endpoints.newReleasesURL + API.apiKey
+            let urlString = API.apiURL + endpoint + API.apiKey
             let url = URL(string: urlString)
             var request = URLRequest(url: url!)
             request.httpMethod = "GET"
@@ -26,12 +26,14 @@ struct NewReleasesRequest: MoviesRequest {
                     do {
                         let decoder = JSONDecoder()
                         let movies = try decoder.decode(Movies.self, from: data)
-                        observer.onNext(movies.movies as! [T])
+                        observer.onNext(movies.movies)
                     } catch let error {
-                        observer.onError(error)
+                        observer.onError(Errors.failedRequest(description: error.localizedDescription))
                     }
                 case 404:
-                    observer.onError(error!)
+                    observer.onError(Errors.notFound)
+                case 500:
+                    observer.onError(Errors.serverProblem)
                 default: break
                 }
                 observer.onCompleted()

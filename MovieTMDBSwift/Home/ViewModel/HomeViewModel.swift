@@ -52,12 +52,12 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     private func getMovies() {
         guard let filter = filterMovies?.value.first else { return }
-        getNewReleasesMovies(filter: filter)
-        getTrendsMovies(filter: filter)
+        getNewReleasesMovies(endpoint: Endpoints.newReleasesURL, filter: filter)
+        getTrendsMovies(endpoint: Endpoints.trendsURL, filter: filter)
     }
     
-    private func getNewReleasesMovies(filter: FilterMovies) {
-        DataManager.getNewReleasesMovies(filter: filter)
+    private func getNewReleasesMovies(endpoint: String, filter: FilterMovies) {
+        DataManager.getMovies(endpoint: endpoint, filter: filter)
             .subscribe(on: MainScheduler.instance)
             .observe(on: MainScheduler.instance)
             .subscribe(
@@ -73,8 +73,8 @@ final class HomeViewModel: HomeViewModelProtocol {
                 }).disposed(by: view.disposeBag)
     }
     
-    func getTrendsMovies(filter: FilterMovies) {
-        DataManager.getTrendsMovies(filter: filter)
+    func getTrendsMovies(endpoint: String, filter: FilterMovies) {
+        DataManager.getMovies(endpoint: endpoint, filter: filter)
             .subscribe(on: MainScheduler.instance)
             .observe(on: MainScheduler.instance)
             .subscribe(
