@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>UIAppFonts</key>
-    <array>
-        <string>Poppins-Light.otf</string>
-        <string>Poppins-Medium.otf</string>
-        <string>Poppins-SemiBold.otf</string>
-        <string>Poppins-Bold.otf</string>
-        <string>Poppins-Thin.otf</string>
-        <string>Poppins-ExtraLight.otf</string>
-        <string>Poppins-Regular.otf</string>
-    </array>
+	<array>
+		<string>Poppins-Light.otf</string>
+		<string>Poppins-Medium.otf</string>
+		<string>Poppins-SemiBold.otf</string>
+		<string>Poppins-Bold.otf</string>
+		<string>Poppins-Thin.otf</string>
+		<string>Poppins-ExtraLight.otf</string>
+		<string>Poppins-Regular.otf</string>
+	</array>
 </dict>
 </plist>
